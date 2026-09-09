@@ -4,24 +4,24 @@
 
 ![FEATURE IMAGE — SEVERN BORE](figures/feature_image.jpg)
 
-**Feature image.** The Severn bore — a tidal bore travelling upstream on the River Severn (Gloucestershire, UK). Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.
+**Feature image.** A tidal bore travelling upstream on the River Severn (Gloucestershire, UK). Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.
 
 *Alt text: A large tidal bore propagating upstream along the River Severn, forming a distinct moving front across the river. Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.*
 
 <!-- KEY TAKEOUT:
 Open a question rather than explain the bore. The reader should wonder how this river has anything to do with the title. https://www.alamy.com/stock-photo-a-rare-five-star-severn-bore-photographed-from-the-air-2-march-2010-28472060.html?imageid=55D3E650-D10B-4001-871F-5EA083D9DAE5&pn=9&searchId=4580bb4ada4501c9282473991419310d&searchtype=0
 -->
-The constant speed of light in vacuum was one of the great insights of nineteenth-century physics. And we all learned in school that in materials things become more complicated: different colors travel at slightly different speeds, helping a prism — or a raindrop — spread white light into a spectrum.
+One of the great insights of nineteenth-century physics was that the speed of light in vacuum is a constant.  And in a medium different colors can travel at slightly different speeds, causing a prism, or a raindrop to spread white light into a rainbow.
 
 But even that picture is deceptively simple. It treats a wave as if it had one frequency, one wavelength, and one speed. What happens when we look at a pulse, containing many wavelengths at once? And what happens when the medium itself is moving?
 
 Suddenly, "the speed of a wave" is no longer a single number.
 
-Imagine a wave trying to travel upstream in the river in the picture above. The current carries the water one way while the wave tries to travel the other. If the current becomes strong enough, can the wave simply stop?
+For the wave trying to travel upstream in the river in the picture above the current carries the water one way while the wave tries to travel the other. If the current becomes strong enough, can the wave simply stop?
 
-Interestingly enough, this question takes us surprisingly close to black-hole physics. Waves moving through flowing water can obey much the same mathematics as waves near a black-hole horizon. Push the analogy further, and scientists can even reproduce some of the classical physics underlying Hawking radiation in a water basin.
+Interestingly enough, this question takes us close to black-hole physics. Waves moving through flowing water can obey much the same mathematics as waves near a black-hole horizon. Push the analogy further, and scientists can even reproduce some of the classical physics underlying Hawking radiation in a water basin.
 
-So, before we get anywhere near a black hole, we need to look more carefully at a deceptively simple question:
+So, before we get anywhere near a black hole, we need to look more carefully at a simple question:
 
 What do we actually mean by the speed of a wave?
 
@@ -43,7 +43,6 @@ vₚ = ω/k
 It tells us how fast a point of constant phase — a crest, for example — moves through space.
 
 For many of the waves we first encounter, this is all we need. The wave moves, its crests move with it, and there seems little reason to ask what we mean by *the speed of the wave*.
-
 
 ## When the Packet Leaves the Crests Behind
 
