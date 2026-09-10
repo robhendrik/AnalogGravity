@@ -68,7 +68,7 @@ Purpose:
   - the packet slows;
   - its wavelength becomes shorter and shorter.
 
-![Figure_2](Figure_2.gif)
+![Figure_2](Figure_2_white_hole_wavepacket_nondispersive_dx0125_W20.gif)
 
 **Figure 2 — A wave approaching a smooth white-hole horizon without dispersion.** The wave travels against an increasingly strong current. Its progress slows while its wavelength becomes shorter and shorter. In the simulation the wave eventually appears to disappear close to the horizon. Image by author.
 
@@ -110,7 +110,7 @@ Purpose:
 - Now part of the wave reflects from the abrupt change before the numerical blueshift runs away.
 - Its propagation direction reverses.
 
-![Figure_3](Figure_3.gif)
+![Figure_3](Figure_3_white_hole_wavepacket_nondispersive_dx0125_W05.gif)
 
 **Figure 3 — Reflection from a sharp nondispersive horizon.** When the change in flow becomes sufficiently abrupt, part of the incoming wave reflects before the numerical blueshift becomes arbitrarily large. This is ordinary scattering from a sharp background change within the same nondispersive mode structure; no additional dispersive modes have yet appeared. Image by author.
 
@@ -192,7 +192,7 @@ Purpose:
 
 Unlike the reflection from our sharp nondispersive boundary, this does not require an abrupt transition. The new behaviour comes from the additional wave solutions created by dispersion itself.
 
-![Figure_4](Figure_4.gif)
+![Figure_4](Figure_4_white_hole_wavepacket_dispersive_T19.gif)
 
 **Figure 4 — The same smooth horizon with dispersion.** Once wave speed depends on wavelength, the blueshift changes the propagation itself. Near the blocking region the incoming packet converts into additional wave components. One returns toward the slow-flow region, while another mode can continue into the fast-flow side of the white-hole horizon. Image by author.
 
@@ -229,7 +229,7 @@ Purpose:
   - roots can merge;
   - different outgoing solutions become available.
 
-[Insert dispersion/root animation or static diagram]
+![Figure 5](Figure_5.png)
 
 **Figure 5 — One laboratory frequency, several possible wave modes.** The curved line shows the dispersion relation in the frame moving with the medium; the straight line represents the Doppler-shifted laboratory frequency. Their intersections give the allowed wavenumbers. As the flow changes, the number and character of the possible modes change, allowing an incoming wave to scatter into several distinct components. Image by author.
 
