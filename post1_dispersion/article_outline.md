@@ -70,30 +70,15 @@ The velocity of the packet is the **group velocity**:
 
 v_g = dω/dk
 
-That derivative is more than a mathematical definition. It has a beautifully simple geometric meaning.
-
-
-## The Shape That Determines How Waves Move
-
 <!-- KEY TAKEOUT:
 The dispersion curve contains both velocities: phase velocity is a secant and group velocity is a tangent.
 -->
 
-Plot frequency ω vertically and wavenumber k horizontally.
+The curve get when we plot frequency ω vertically and wavenumber k horizontally is called the **dispersion curve**.
 
-Every possible sinusoidal wave in the medium becomes a point on a curve: the **dispersion relation**.
+Every possible sinusoidal wave in the medium is a point on this curve. The phase velocity comes from the line connecting that point to the origin. The group velocity comes from the tangent to the curve at that same point.
 
-The phase velocity comes from the line connecting that point to the origin.
-
-The group velocity comes from the tangent to the curve at that same point.
-
-If the dispersion relation is a straight line, the two slopes are identical. Phase and group velocity are the same.
-
-Bend the curve, and they separate.
-
-That one geometric idea will carry us through the rest of the story.
-
-
+If the dispersion relation is a straight line, the two slopes are identical. Phase and group velocity are the same. Bend the curve, and they separate.
 ## Why Rainbows Exist
 
 <!-- KEY TAKEOUT:
