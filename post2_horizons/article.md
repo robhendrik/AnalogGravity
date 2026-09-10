@@ -1,203 +1,435 @@
-# The SpeedS of Light
+# [Working Title]
 
-## How Dispersion Connects Rainbows to Hawking Radiation
+### *[Working Subtitle]*
 
-![FEATURE IMAGE — SEVERN BORE](figures/feature_image.jpg)
+<!--
+Purpose:
+- Open with the familiar intuition of a black-hole horizon.
+- Turn this immediately into a wave question rather than starting with Hawking radiation.
+- Set up the central experiment of the post: what happens when a wave approaches such a boundary?
+- Keep the Hawking connection hidden for now.
+-->
 
-> **Feature image.** A tidal bore travelling upstream on the River Severn (Gloucestershire, UK). Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.
+[Opening paragraphs]
 
-*Alt text: A large tidal bore propagating upstream along the River Severn, forming a distinct moving front across the river. Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.*
+We normally think of a black-hole horizon as a point of no return. Once light crosses it, even travelling at the speed of light is no longer enough to escape.
 
-A wave has a speed — or so it seems. Measure the wavelength, count how often the crests pass, multiply. That simple picture is enough for most of what we meet in daily life.
+But horizons are not unique to gravity. Waves travelling through a flowing medium can encounter the same basic problem: the medium itself can move faster than the wave can propagate against it.
 
-For the wave trying to travel upstream in the photo above, though, the current carries the water one way while the wave tries to travel the other. If the current becomes strong enough, can the wave simply stop?
+So, what happens if we actually send a wave toward such a horizon?
 
-Interestingly enough, this question takes us close to black-hole physics. Waves moving through flowing water can obey much the same mathematics as waves near a black-hole horizon. Push the analogy further, and we can reproduce some of the classical physics behind Hawking radiation — in a water basin.
+---
 
-In this post, we will discuss what we actually mean by the speed of a wave, and why, once the medium itself starts moving, that question stops being so simple.
+## Black Holes, White Holes, And A Wave That Cannot Pass
 
-So before we get anywhere near a black hole, we need to look more carefully at a simple question:
+<!--
+Purpose:
+- Explain black-hole versus white-hole horizons with the minimum physics needed.
+- Introduce time reversal as the intuitive connection between them.
+- Explain why we use the white-hole version: we can launch a wave from the accessible side and watch what happens.
+- Do not introduce Hawking radiation, positive/negative frequency, or quantum mechanics yet.
+-->
 
-> **What do we actually mean by the speed of a wave?**
+- Waves propagate relative to a medium while the medium itself can also move.
+- If the flow becomes sufficiently fast, a wave can no longer travel against it.
+- In the black-hole version:
+  - a wave inside the fast-flow region cannot escape.
+- Reverse the process:
+  - an incoming wave can no longer enter the fast-flow region.
+  - this is the white-hole version.
+- The white-hole geometry is convenient because we can launch a wave toward the horizon and watch the process unfold.
 
-## The Speed of a Wave
+![Figure_1](Figure_1.png)
 
-Back in school, waves seemed simple.
+**Figure 1 — Black-hole and white-hole horizons.** In a black-hole analogue, a wave in the fast-flow region cannot escape against the current. Reverse the process and we obtain a white-hole horizon: an incoming wave encounters a region it cannot enter. The white-hole version allows us to launch a wave toward the horizon and watch what happens. Image by author.
 
-Draw a sinusoid. Measure its wavelength. Count how often the crests pass. From wavelength and frequency, we get a speed.
+*Alt text: Side-by-side schematic of black-hole and white-hole analogue horizons. In the black-hole panel, the background flow points toward a fast-flow region and a wave trying to escape is blocked at the horizon. In the white-hole panel, the flow direction is reversed and an incoming wave approaching from the slow-flow side is blocked from entering the fast-flow region.*
 
-For a sinusoidal wave, that speed is the **phase velocity**. We get it by multiplying frequency and wavelength, though the more common notation divides ω (the frequency times 2π) by the wavenumber $k$ (2π divided by the wavelength):
+---
 
-$$
-v_{\text{phase}} = \omega/k
-$$
+## Let Us Send In A Wave
 
-It tells us how fast a point of constant phase — a crest, say — moves through space.
+<!--
+Purpose:
+- Move quickly from the static horizon picture to the first simulation.
+- Start with the simplest nondispersive model.
+- Let the reader see the slowing and compression before explaining what goes wrong.
+- Combine the visual result and the numerical/trans-Planckian issue into one continuous section rather than creating several separate conceptual stops.
+-->
 
-For most of the waves we meet early on, that is all we need. The wave moves, its crests move with it, and there seems little reason to ask what we even mean by the speed of the wave.
+- Use the simplest possible model:
+  - one wave speed relative to the medium;
+  - no dispersion;
+  - smooth transition from slow to fast flow.
+- Launch a wave packet from the slow-flow side toward the white-hole horizon.
+- The packet travels against the current.
+- As the counter-current becomes stronger:
+  - its lab-frame group velocity decreases;
+  - the packet slows;
+  - its wavelength becomes shorter and shorter.
 
-Note that this only holds because we quietly assumed one thing: that the wave is a single, infinite sinusoid. Real waves rarely are.
+![Figure_2](Figure_2.gif)
 
-## When Crests and Packet Part Ways
+**Figure 2 — A wave approaching a smooth white-hole horizon without dispersion.** The wave travels against an increasingly strong current. Its progress slows while its wavelength becomes shorter and shorter. In the simulation the wave eventually appears to disappear close to the horizon. Image by author.
 
-Real waves are rarely infinite sinusoids. They come in pulses, bursts and packets. In a non-dispersive medium — where the phase velocity does not depend on frequency — these packets travel at the same speed as the phase.
+*Alt text: Animation of a localized wave packet travelling toward a white-hole horizon through an increasingly strong opposing flow. The packet slows down and its oscillations become progressively shorter in wavelength near the horizon.*
 
-![Figure 1](figures/figure_1.gif)
+- The wave has not really been absorbed.
+- Our numerical grid simply has a smallest wavelength it can represent.
+- In the ideal nondispersive continuum model there is no such cutoff.
+- As the horizon is approached:
+  - group velocity tends to zero;
+  - wavenumber tends toward infinity;
+  - wavelength tends toward zero.
+- Eventually the simulation can no longer resolve it.
 
-**Figure 1. Phase and group velocity are the same in a nondispersive medium.** A wave packet travels without changing shape because the carrier oscillations and the packet envelope move together: group velocity equals phase velocity.
+This gives us an unexpectedly useful analogy.
 
-*Alt text: Animation of a blue sinusoidal wave packet with a white envelope moving from left to right without changing shape. The carrier crests remain locked to the envelope, illustrating equal group and phase velocity.*
+Hawking's calculation has no numerical grid, but standard relativistic field theory also contains no short-wavelength cutoff. Trace a late outgoing mode backwards toward the horizon and its wavelength becomes exponentially shorter, eventually reaching scales far beyond those where we know ordinary quantum field theory can be trusted.
 
-In a dispersive medium, this can be different. The crests can run forward through the packet, or the packet can overtake its own crests.
+This is the famous 'trans-Planckian problem'.
 
-![Figure 2](figures/figure_2.gif)
+Possible pull quote:
 
-**Figure 2. Dispersion separates phase velocity from group velocity.** Top: two wave packets in which the carrier oscillations move at a different speed from the envelope. On the left, group velocity is smaller than phase velocity; on the right group velocity is higher. Bottom: the corresponding dispersion curves. The phase velocity is ω/k, while the group velocity is the local slope, dω/dk.
+> **Our computer runs out of resolution because the wavelength keeps shrinking. Hawking's calculation runs into unknown physics for essentially the same reason.**
 
-*Alt text: Four-panel figure. The top-left animation shows a blue carrier wave moving faster than its white envelope, so group velocity is smaller than phase velocity. The top-right shows the envelope moving faster than the carrier, so group velocity is larger than phase velocity. The two lower panels show the corresponding curved omega-versus-k dispersion relations, with a short tangent at the selected point indicating the group velocity.*
+---
 
-So the packet has its own velocity, distinct from the phase velocity: the **group velocity**:
+## What If We Make The Horizon Sharp?
 
-$$
-v_{\text{group}} = d\omega/dk
-$$
+<!--
+Purpose:
+- Perform one more controlled numerical experiment before adding physical dispersion.
+- Show that an abrupt background can itself cause reflection.
+- Make clear that this is ordinary scattering within the nondispersive mode structure, not Hawking-like positive/negative-frequency conversion.
+- Set up a contrast that will be explicitly recalled when dispersion is added.
+-->
 
-## The Shape That Determines How Waves Move
+- Replace the smooth transition by a much sharper one.
+- Launch the same kind of nondispersive packet.
+- Now part of the wave reflects from the abrupt change before the numerical blueshift runs away.
+- Its propagation direction reverses.
 
-That derivative has a geometric meaning, and it is worth making concrete.
+![Figure_3](Figure_3.gif)
 
-Plot frequency ω vertically and wavenumber $k$ horizontally. Every possible sinusoidal wave the medium can support becomes a single point on a curve — the dispersion relation.
+**Figure 3 — Reflection from a sharp nondispersive horizon.** When the change in flow becomes sufficiently abrupt, part of the incoming wave reflects before the numerical blueshift becomes arbitrarily large. This is ordinary scattering from a sharp background change within the same nondispersive mode structure; no additional dispersive modes have yet appeared. Image by author.
 
-From that one curve, both velocities fall out almost for free. The phase velocity is the slope of the straight line connecting that point to the origin. The group velocity is the slope of the line tangent to the curve at that same point — the line that just touches the curve there and matches its local direction.
+*Alt text: Animation of a wave packet travelling toward a sharp white-hole transition. Part of the packet reflects back toward the slow-flow region while the background remains nondispersive.*
 
-So, in the boundary case where the dispersion relation is itself a straight line through the origin, those two lines are the same line. Phase velocity and group velocity coincide, exactly as we saw for the non-dispersive packet in Figure 1.
+- Important distinction:
+  - reflection does not by itself imply a new mode branch;
+  - we still have the same nondispersive wave physics.
+- This will matter once we add dispersion:
+  - there, new outgoing components can appear even for a smooth horizon.
 
-Bend the curve, and the two lines pull apart.
+---
 
-Note that this is really all dispersion is, geometrically: a curved ω($k$). If there is no bending, there is no dispersion, and there will be no distinction between the speed of the crests and the speed of the packet.
+## But Real Waves Do Not Have One Speed
 
-That one geometric idea — a straight line through the origin against a tangent line — will carry us through the rest of the story.
+<!--
+Purpose:
+- Reconnect to Post 1.
+- Explain why the nondispersive model must eventually fail for real surface waves.
+- Use this to motivate the dispersive simulation naturally rather than presenting dispersion as an arbitrary mathematical complication.
+- Fold the "what dispersion does empty space have?" discussion into this same section so it remains compact.
+-->
 
-## Why Rainbows Exist
+- Recall the main lesson from Post 1:
+  - real water waves are dispersive;
+  - different wavelengths propagate at different phase and group velocities.
+- As our packet blueshifts:
+  - its wavelength changes;
+  - therefore its own propagation speed changes.
+- The simple nondispersive prediction cannot continue indefinitely.
 
-One of the great insights of nineteenth-century physics was that the speed of light in vacuum is a constant. In a medium, however, different colours travel at slightly different speeds — which is exactly the kind of dispersion we have just been building up.
+At first sight, however, this seems to weaken the analogy with a black hole.
 
-The refractive index of glass depends on frequency. Different colours therefore propagate at different phase velocities through it, which is why a prism separates white light into a spectrum.
+Why should the dispersion relation of water have anything to do with empty space?
 
-A rainbow adds some extra physics on top — refraction, reflection inside water droplets, geometry — but its colours ultimately come down to the same fact: the phase velocity of light in glass, and in water, varies with wavelength. We see the consequences of dispersion every time white light breaks into colour.
+The answer is: it probably does not.
 
-> **The crests and the wave packet do not have to travel at the same speed.**
+In ordinary relativistic quantum field theory, a massless field locally obeys the familiar linear relation between frequency and wavenumber. Hawking's semiclassical calculation effectively follows that theory into the regime of arbitrarily short wavelengths.
 
-## Dispersion Curves Come in Many Shapes
+But once those wavelengths become smaller than the Planck scale, we do not know whether that description remains valid.
 
-Different physical systems produce remarkably different dispersion curves, and it is worth walking through a few to see how much the shape of that curve actually tells us.
+So what dispersion relation should we use instead?
 
-An ideal, continuous string or rope is essentially non-dispersive — a straight line through the origin, phase and group velocity locked together. Add discrete masses along it, like beads on a rope, and the curve bends: the discreteness of the beads places a limit on the waves the chain can carry, and the curve eventually reaches a maximum frequency it cannot exceed.
+We do not know.
 
-For surface waves on water, two different mechanisms compete to set the wave speed. Gravity pulls the surface flat; surface tension does too, at short wavelengths. So, where gravity and surface tension trade off against each other, water waves reach a minimum phase velocity — the crossover point between the long gravity waves we associate with the ocean and the short capillary waves that ripple across a puddle.
+- Water-wave dispersion is not claimed to be the microscopic physics of spacetime.
+- Neither is a lattice dispersion.
+- Neither is the quartic dispersion used in our numerical model.
+- The interesting question is different:
+  - if we change the unknown high-frequency physics, which features of the horizon process survive?
 
-Even a free quantum particle has a dispersion relation. For a de Broglie wave, the frequency grows with the square of the wavenumber, producing an upward-curving parabola. Remarkably, the velocity we associate with the particle itself is the group velocity of its wave packet, not the phase velocity of the underlying oscillations.
+Possible pull quote:
 
-Different physics. Different curves. But the idea stays the same: the shape of the dispersion relation determines how waves move.
+> **The point is not that water has the right microscopic physics. The point is that we do not know the right microscopic physics — so we can ask what survives when we change it.**
 
-For what comes next, we need a medium with one more property on top of dispersion. The medium itself has to move. So let's go back to water, and see what happens once it starts to flow.
+- Modified-dispersion studies find Hawking-like behaviour under a broad range of conditions. As Barceló, Liberati and Visser lay out in their analogue-gravity review, this robustness is not unconditional: it depends on assumptions about the short-wavelength state and how it evolves, and whether real black-hole physics satisfies all of those conditions remains an open question.
+- This is precisely one reason analogue systems are interesting: unlike an astrophysical black hole, their microscopic physics is known and can sometimes be varied deliberately — the same review develops this point at length.
 
-## Water Waves
+---
 
-For surface gravity waves on water of depth h, ignoring surface tension for the moment, the dispersion relation is
+## Turn On Dispersion
 
-$$
-\omega^2 = gk\tanh(kh)
-$$
+<!--
+Purpose:
+- Deliver the main visual reveal.
+- Repeat essentially the same smooth-horizon experiment, now with dispersive wave physics.
+- Let the reader see the extra components first and explain their origin afterwards.
+- Explicitly contrast this with the sharp-boundary reflection from the previous section.
+-->
 
-The exact formula matters less here than the shape it produces. At long wavelengths in shallow water, the curve is nearly straight — phase and group velocity almost coincide, and the water behaves almost like our non-dispersive rope from a few sections back. At shorter wavelengths the curve bends, and the two velocities separate.
+- Return to the smooth horizon.
+- Keep the incoming packet and overall geometry similar.
+- Now use a subluminal dispersion relation.
+- As the wave approaches the blocking region:
+  - it blueshifts;
+  - the shortening wavelength changes its group velocity;
+  - dispersion becomes important;
+  - new components appear.
 
-So water gives us a familiar, everyday medium with a genuinely nonlinear dispersion curve. And, unlike glass or a rope, we can make it flow.
+Unlike the reflection from our sharp nondispersive boundary, this does not require an abrupt transition. The new behaviour comes from the additional wave solutions created by dispersion itself.
 
-## Waves in the River
+![Figure_4](Figure_4.gif)
 
-In the photo at the top of this post, we see the Severn bore — a tidal bore, a moving front shaped by the tide pushing upstream against the current. In the nineties I actually got the chance to ride it upstream in a canoe. I did not last very long on it, but watching that wave approach slowly against the flow, and having it lift the canoe as it passed, is not something you forget.
+**Figure 4 — The same smooth horizon with dispersion.** Once wave speed depends on wavelength, the blueshift changes the propagation itself. Near the blocking region the incoming packet converts into additional wave components. One returns toward the slow-flow region, while another mode can continue into the fast-flow side of the white-hole horizon. Image by author.
 
-So, the river gives us a moving medium, and that changes something fundamental about how we describe a wave on it.
+*Alt text: Animation of a dispersive wave packet approaching a smooth white-hole horizon. As the incoming packet reaches the blocking region, shorter-wavelength components appear. One propagates back toward the slow-flow region while another component continues through the horizon into the fast-flow region.*
 
-Imagine standing on the bank. We measure a wave with frequency ω and wavenumber *k*. Now imagine someone drifting along with the water instead — maybe because they just fell off their surfboard. That person measures a different frequency, ω′. If the water itself moves at velocity *u*, the two are related by a Doppler shift:
+This is the first point where the behaviour is qualitatively different from our nondispersive model.
 
-$$
-\omega' = \omega - uk
-$$
+The horizon has not simply stopped the wave.
 
-Note that this shift depends on *k*, so different wavelengths get shifted by different amounts. Nothing about the intrinsic water-wave physics has changed. In the frame moving with the water, the dispersion curve therefore stays exactly as it was. What changes is the relation between the co-moving frequency ω′ and the fixed frequency ω measured from the bank. Graphically, that relation becomes a straight line whose slope depends on the flow velocity *u*.
+It has changed it into other waves.
 
-In Figure 3 we show both views side by side: the dispersion curve as seen by the bystander on the bank, and the same physics as seen by the observer drifting with the current.
+---
 
 ## One Frequency, Several Waves
 
-![FIGURE 3](figures/figure_3.gif)
+<!--
+Purpose:
+- Explain the mechanism only after the reader has seen it.
+- Use the dispersion diagram from Post 1 to show why extra wave components are possible.
+- Establish conservation of laboratory frequency in a stationary background.
+- Introduce positive and negative comoving frequency, but postpone the quantum interpretation until later.
+-->
 
-**Figure 3. The same moving medium viewed in two frames.** Left: in the laboratory frame, the frequency ω is fixed while the dispersion curve changes as the flow speed $u$ changes. Right: in the locally co-moving frame, the intrinsic water-wave dispersion stays fixed while the same conserved laboratory frequency appears as the tilted line ω′ = ω − *uk*. The white dots mark the same allowed modes in both views.
+- The background is stationary, so laboratory-frame frequency ω remains fixed.
+- With a straight nondispersive relation, that gives only the familiar branches.
+- With a curved dispersion relation:
+  - one value of ω can correspond to several allowed values of k.
+- Graphically:
+  - draw the dispersion curve in the comoving frame;
+  - draw the Doppler-shifted line ω − uk;
+  - each intersection corresponds to an allowed mode.
+- As the flow changes:
+  - intersections move;
+  - roots can merge;
+  - different outgoing solutions become available.
 
-*Alt text: Two animated dispersion plots shown side by side. In the laboratory-frame panel, a blue dispersion curve tilts and changes with flow speed while a red horizontal frequency line stays fixed. In the co-moving-frame panel, the blue water-wave dispersion curve stays fixed while a red straight line tilts as the flow speed changes. White dots mark the intersections in both panels, and the displayed flow speed passes through zero.*
+[Insert dispersion/root animation or static diagram]
 
-So, in Figure 3 we see something worth pausing on: for a wave in flowing water, the line representing the frequency measured by a co-mover — ω′ — does not cross the dispersion curve just once. It can cross it several times.
+**Figure 5 — One laboratory frequency, several possible wave modes.** The curved line shows the dispersion relation in the frame moving with the medium; the straight line represents the Doppler-shifted laboratory frequency. Their intersections give the allowed wavenumbers. As the flow changes, the number and character of the possible modes change, allowing an incoming wave to scatter into several distinct components. Image by author.
 
-![Figure 4](figures/figure_4.png)
+*Alt text: Dispersion diagram showing a curved frequency-versus-wavenumber relation intersected by a sloping Doppler line at several points. The intersections identify multiple wavenumbers that share the same laboratory-frame frequency.*
 
-**Figure 4. One frequency can correspond to several wave modes.** For a fixed laboratory frequency, the allowed wavenumbers are the intersections between the intrinsic water-wave dispersion relation and the Doppler-shifted line ω′ = ω − *uk*. Here there are three real solutions, k₁, k₂, and k₃: three distinct wave modes at the same laboratory frequency.
+- One of the solutions has negative comoving frequency:
+  - ω′ = ω − uk < 0.
+- This is not simply a wave travelling in the opposite direction.
+- Its sign refers to the frequency measured relative to the moving medium.
+- In the corresponding conserved inner product, this mode has negative norm.
 
-*Alt text: Static omega-prime-versus-k dispersion plot. A blue curved water-wave dispersion relation is crossed by a red straight Doppler-shifted line. Three white intersection points are labelled k1, k2, and k3, showing that one fixed laboratory frequency can correspond to three different wavenumbers.*
+Important caveat:
 
-Each intersection between the ω′-line and the dispersion curve is a genuine, allowed wave. All three share exactly the same frequency in the laboratory frame — but they have different wavelengths, different phase velocities, different group velocities, and even different directions of propagation.
+- The exact four-root structure in our simulation belongs to our chosen toy dispersion.
+- It is not universal.
+- Water-wave experiments commonly discuss three relevant counter-propagating roots.
 
-The assumption we quietly started this post with has broken.
+---
 
-> **One frequency does not necessarily mean one wave.**
+## This Is Not Just A Simulation
 
-## A Negative Frequency That Is Still a Real Wave
+<!--
+Purpose:
+- Ground the numerical result in real experimental work before introducing Hawking.
+- Show that blocking and conversion into positive- and negative-norm modes have actually been observed in flowing water.
+- Keep the interpretation classical at this stage.
+-->
 
-There is a surprise hiding among those intersections in Figure 4.
+- Schützhold and Unruh proposed shallow-water surface waves as a controllable analogue system.
+- Rousseaux and colleagues observed the conversion of an incident positive-frequency wave into a negative-frequency component in moving water, and describe this positive/negative-frequency mixing as the classical mechanism associated with the Hawking process.
+- Weinfurtner and colleagues later launched long surface waves toward a white-hole blocking region and measured the resulting converted waves, explicitly describing their experiment as stimulated Hawking emission at a white-hole horizon.
+- The incoming wave was converted into shorter-wavelength components with positive and negative norm.
+- These experiments are stimulated:
+  - an incoming classical wave is deliberately supplied;
+  - the horizon scatters it into other modes.
 
-Remember that *k₁*, *k₂* and *k₃* all correspond to the same frequency ω for the bystander on the bank. But for the co-moving observer, something odd happens to one of them:
+[Optional experimental image or apparatus schematic]
 
-ω > 0, while ω′ < 0.
+![Figure_6](Figure_6.png)
 
-The wave has not somehow acquired a negative amplitude. Nor is it running backwards in time. The sign just tells us how its phase evolves in a particular reference frame — for that one mode, the co-moving observer sees the phase turning the 'wrong' way compared to the bystander.
+**Figure 6 — Stimulated horizon scattering in flowing water.** In laboratory white-hole analogues, an imposed long surface wave propagates against the current until it reaches a blocking region. The incoming wave can then convert into shorter-wavelength positive- and negative-norm components, providing an experimental realization of the classical mode conversion associated with the Hawking process. [Source or adaptation credit as appropriate.]
 
-Our waves are still entirely classical here — nothing quantum has entered the picture yet. But note that this distinction, between positive- and negative-frequency modes, will turn out to matter a great deal once we reach the analogue of Hawking radiation.
+*Alt text: Schematic or experimental view of a flowing-water horizon experiment. A long incoming surface wave travels against the current toward a blocking region and is converted into shorter-wavelength outgoing components.*
 
-## Where the Modes Meet
+---
 
-So far we have made one important simplification: our river has been flowing everywhere at the same speed.
+## Nice — But What Does This Have To Do With A Black Hole?
 
-Now imagine that the current changes as we move along the river — slower upstream, faster downstream, say. The laboratory frequency ω stays fixed, but u now varies with position, so the Doppler line in Figure 4 no longer sits still. As we move along the river, it sweeps across the dispersion curve, and the intersection points sweep with it.
+<!--
+Purpose:
+- Make the main narrative pivot only after the water-wave physics has been established.
+- Ask the skeptical question explicitly.
+- Reveal the connection to Hawking through backwards propagation and time reversal.
+- Close the loop back to Figure 1.
+-->
 
-Two of them can drift toward each other, and eventually meet.
+So far we have learned something rather interesting about waves in flowing water.
 
-What happens then is worth spelling out, because it is not just a mathematical curiosity. Once the flow gets fast enough, those two intersections merge into one and then vanish altogether — there is simply no real k left that solves the equation. The wave has nowhere to go. And just as the two modes merge, something striking happens: the group velocity of the wave relative to the water exactly balances the opposing current. Its group velocity measured from the bank is zero. The packet has come to a standstill.
+But a black hole in deep space contains neither water nor a wave generator.
 
-> **A wave can still move through the water while standing perfectly still relative to the bank.**
+**What does any of this have to do with Hawking radiation?**
 
-So, we have now encountered two ingredients that also feature in Hawking's analysis of black holes: negative frequencies, seen from the perspective of a co-moving observer, and a wave that stalls and simply cannot propagate any further. We have not done anything quantum or relativistic yet — this is all still classical water on a classical river. But it is hard not to wonder to what extent this point, where a wave trying to flow upstream stalls, is a true horizon.
+- Start with a wave packet observed far from a black hole.
+- Hawking's reasoning can be understood by tracing such an outgoing mode backwards toward the horizon.
+- Close to the horizon:
+  - the backwards-traced packet becomes enormously blueshifted;
+  - when expressed relative to a freely falling observer, it contains both positive- and negative-frequency components.
+- Jacobson's treatment of quantum fields in curved spacetime emphasizes this distinction between frequency measured at infinity and frequency measured by a freely falling observer.
+- Now reverse the movie.
+- A black-hole process traced backwards becomes a white-hole scattering process traced forwards.
+- That is essentially the geometry we have just simulated and the water-wave experiments realize.
 
-That is where we will continue next time.
+[Insert Hawking backwards-tracing / spacetime diagram]
+
+**Figure 7 — Hawking's argument viewed backwards in time.** An outgoing wave packet detected far from a black hole can be traced backwards toward the horizon. Relative to a freely falling observer, its near-horizon precursor contains both positive- and negative-frequency components. Reversing the movie turns this into the white-hole scattering process explored in analogue experiments. Image by author / adapted as appropriate.
+
+*Alt text: Space-time diagram of an outgoing wave packet near a black-hole horizon. When traced backwards in time, the packet approaches the horizon and separates into positive- and negative-frequency precursor components. Reversing the direction of time gives the corresponding white-hole scattering picture.*
+
+---
+
+## From Negative Frequency To Particle Creation
+
+<!--
+Purpose:
+- Explain the quantum step as compactly as possible.
+- Connect the classical positive/negative-frequency mixing to creation and annihilation operators.
+- Immediately use this to distinguish spontaneous Hawking radiation from our stimulated classical experiment.
+- Avoid turning this into a standalone quantum-field-theory tutorial.
+-->
+
+Classically, positive- and negative-frequency components are simply parts of the wave field.
+
+The interpretation changes when the field is quantized.
+
+- Positive-frequency modes are associated with annihilation operators.
+- Negative-frequency modes are associated with creation operators.
+- A transformation that mixes positive and negative frequencies therefore mixes annihilation and creation operators.
+- In quantum field theory, this means that the definition of 'no particles' before and after the process is different.
+- Particle creation becomes possible.
+
+Possible pull quote:
+
+> **Classically we see mode conversion. Quantize the same field, and positive/negative-frequency mixing becomes particle creation.**
+
+### Did We Just Make Hawking Radiation?
+
+No.
+
+- Our simulation begins with an incoming classical wave.
+- The water experiments deliberately inject a wave.
+- The horizon then scatters that excitation.
+- This is stimulated mode conversion.
+- Hawking radiation from a black hole is spontaneous:
+  - no incoming classical wave is needed;
+  - the quantum state itself supplies the fluctuations.
+
+But stimulated and spontaneous processes are governed by the same underlying mode mixing.
+
+That is why measuring the classical conversion is interesting.
+
+We are not creating an evaporating black hole in a water tank.
+
+We are probing one of the mechanisms that makes Hawking radiation possible.
+
+---
+
+## How Close Can A Water Basin Get?
+
+<!--
+Purpose:
+- End with the scope and limitation of the analogy.
+- Emphasize what was genuinely demonstrated without implying that water reproduces full gravity.
+- Return to the unknown short-distance physics and the practical difficulty of observing astrophysical Hawking radiation.
+- Finish with an open question.
+-->
+
+- A water tank is not a black hole.
+- Its background flow does not obey Einstein's equations.
+- Surface waves are not photons.
+- Our numerical model is more abstract still:
+  - its dispersion relation is deliberately simplified;
+  - its purpose is to expose blocking and mode conversion.
+
+What analogue systems can reproduce includes:
+
+- horizon kinematics;
+- the runaway blueshift of the nondispersive approximation;
+- the effect of modified high-frequency dispersion;
+- positive/negative-frequency mode conversion;
+- stimulated horizon scattering.
+
+What they do not automatically reproduce includes:
+
+- the dynamics of spacetime governed by Einstein's equations;
+- the complete quantum state around an astrophysical black hole;
+- spontaneous quantum Hawking emission.
+
+The important point is perhaps not that our analogue has the 'right' short-distance physics.
+
+We do not know what the right short-distance physics of spacetime is.
+
+Instead, analogue systems let us alter that physics deliberately and see what survives. Under a broad range of conditions studied so far, Hawking-like mode conversion does survive — although whether real black holes satisfy all the assumptions required for that robustness remains an open question, as Barceló, Liberati and Visser discuss in their review of the field.
+
+Direct Hawking radiation from ordinary astrophysical black holes is also extraordinarily difficult to observe: for stellar-mass black holes the expected Hawking temperature is far below the surrounding cosmic microwave background.
+
+So analogue experiments may be among the closest experimental routes we currently have to the physics underlying Hawking's prediction.
+
+**How much of Hawking radiation belongs specifically to gravity — and how much belongs to horizons themselves?**
+
+---
 
 ## References
 
-1. Brillouin, L. *Wave Propagation and Group Velocity*. Academic Press, 1960.
+<!--
+Purpose:
+- Keep the reference list focused on papers actually used in the narrative.
+- Prefer original sources for the key conceptual steps.
+- Distinguish clearly between the original Hawking result, analogue proposals, stimulated experiments, and modified-dispersion studies.
+-->
 
-2. Lighthill, M. J. *Waves in Fluids*. Cambridge University Press, 1978.
+Core references:
 
-3. Ashcroft, N. W. & Mermin, N. D. *Solid State Physics*. Holt, Rinehart and Winston, 1976.
+1. S. W. Hawking — original black-hole radiation paper.
+2. W. G. Unruh (1981) — acoustic black-hole analogy.
+3. R. Schützhold & W. G. Unruh (2002) — gravity-wave / water-wave analogue.
+4. G. Rousseaux et al. (2008) — observation of negative-frequency waves in water.
+5. S. Weinfurtner et al. (2010 / 2013) — stimulated Hawking emission in surface waves.
+6. U. Leonhardt & S. Robertson (2012) — Hawking radiation in dispersive media.
+7. C. Barceló, S. Liberati & M. Visser — analogue-gravity review and UV robustness.
+8. T. Jacobson — quantum fields in curved spacetime, Hawking effect, and the trans-Planckian question.
 
-4. Hawking, S. W. "Particle Creation by Black Holes." *Communications in Mathematical Physics* **43**, 199–220 (1975).
+<!--
+Specific sourcing cautions:
 
-5. Unruh, W. G. "Experimental Black-Hole Evaporation?" *Physical Review Letters* **46**, 1351–1353 (1981).
-
-6. Schützhold, R. & Unruh, W. G. "Gravity Wave Analogues of Black Holes." *Physical Review D* **66**, 044019 (2002).
-
-7. Rousseaux, G., Mathis, C., Maïssa, P., Philbin, T. G. & Leonhardt, U. "Observation of Negative-Frequency Waves in a Water Tank: A Classical Analogue to the Hawking Effect?" *New Journal of Physics* **10**, 053015 (2008).
-
-8. Weinfurtner, S., Tedford, E. W., Penrice, M. C. J., Unruh, W. G. & Lawrence, G. A. "Measurement of Stimulated Hawking Emission in an Analogue System." *Physical Review Letters* **106**, 021302 (2011).
-
-9. Leonhardt, U. & Robertson, S. "Analytical Theory of Hawking Radiation in Dispersive Media." *New Journal of Physics* **14**, 053003 (2012).
-
-10. Barceló, C., Liberati, S. & Visser, M. "Analogue Gravity." *Living Reviews in Relativity* **14**, 3 (2011).
+- Do not imply that Hawking proposed a particular Planck-scale dispersion relation.
+- Standard semiclassical Hawking theory uses ordinary local relativistic quantum field theory.
+- The actual microscopic high-frequency behaviour of spacetime is unknown.
+- Modified-dispersion models often recover Hawking-like behaviour under suitable assumptions; do not claim complete independence from UV physics.
+- The exact four-root structure belongs to our toy model.
+- Water-wave experiments generally discuss three relevant counter-propagating roots.
+- Distinguish negative comoving frequency from merely negative k or leftward propagation.
+- Distinguish classical stimulated mode conversion from spontaneous quantum Hawking radiation.
+-->
