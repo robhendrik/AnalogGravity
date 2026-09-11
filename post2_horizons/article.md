@@ -1,6 +1,7 @@
-# [Working Title]
+# Hawking in your bathtub?
 
-### *[Working Subtitle]*
+### We sent a wave toward a horizon it could never cross — and watched it turn into something that looks remarkably like Hawking radiation.
+
 ![Feature](Feature_image.png)
 **Feature image** — Wave approaching a white-hole horizon. Image generated with PyVista by author.
 *Alt text: Colored visualization of a wave approaching a white-hole horizon. The wave gets compressed near the horizon.*
@@ -114,263 +115,154 @@ In the nondispersive case before the wave either disappeared or bounced straight
 
 ## One Frequency, Several Waves
 
-<!--
-Purpose:
-- Explain the mechanism only after the reader has seen it.
-- Use the dispersion diagram from Post 1 to show why extra wave components are possible.
-- Establish conservation of laboratory frequency in a stationary background.
-- Introduce positive and negative comoving frequency, but postpone the quantum interpretation until later.
--->
+So, that is the mechanism: because the flow is steady, the wave's laboratory-frame frequency ω stays fixed all the way to the horizon. In a nondispersive medium, that would pin down a single wavenumber, and nothing more could happen. But the moment the dispersion curve bends, a fixed ω can correspond to several different *k* at once — and as the flow changes, which roots exist, and how many, can change too.
 
-- The background is stationary, so laboratory-frame frequency ω remains fixed.
-- With a straight nondispersive relation, that gives only the familiar branches.
-- With a curved dispersion relation:
-  - one value of ω can correspond to several allowed values of k.
-- Graphically:
-  - draw the dispersion curve in the comoving frame;
-  - draw the Doppler-shifted line ω − uk;
-  - each intersection corresponds to an allowed mode.
-- As the flow changes:
-  - intersections move;
-  - roots can merge;
-  - different outgoing solutions become available.
+That is exactly what Figure 4 showed us. The incoming root vanished once the flow went supercritical, and two new roots, *k₁* and *k₂*, appeared in its place — both with negative ω′.
 
+What does a negative comoving frequency actually mean?
 
-- One of the solutions has negative comoving frequency:
-  - ω′ = ω − uk < 0.
-- This is not simply a wave travelling in the opposite direction.
-- Its sign refers to the frequency measured relative to the moving medium.
-- In the corresponding conserved inner product, this mode has negative norm.
+Not that the wave is somehow travelling backwards, or that its wavelength has gone negative. ω′ is simply the frequency this wave would be measured to have by an observer moving with the water. For *k₁* and *k₂*, that measured frequency comes out negative. The wave is still an entirely ordinary, real, classical solution of the wave equation — it oscillates, it carries energy, it looks like any other ripple if you just watched it go by. The only strange thing about it is what a co-moving observer would call its frequency.
 
-Important caveat:
+Note that this sign is not just bookkeeping. In the conserved inner product that governs how these wave amplitudes combine, a negative-ω′ mode carries negative norm. We are not going to need the details of that inner product here — but the sign itself is going to matter a great deal once we get to the quantum version of this story.
 
-- The exact four-root structure in our simulation belongs to our chosen toy dispersion.
-- It is not universal.
-- Water-wave experiments commonly discuss three relevant counter-propagating roots.
-
+One caveat before we move on. Our simulation's dispersion relation happens to produce four roots at once (*k₁*, *k₂*, *k₄*, *k₅* across the two panels — *k₃* was the incoming wave itself). That particular number is a feature of the toy dispersion we chose for this simulation, not a universal fact about horizons. Real water-tank experiments typically discuss three relevant counter-propagating roots. The physics we care about — a positive-norm and a negative-norm partner appearing together — is the same either way; the extra root is just our model's own bookkeeping.
 ---
 
 ## Are These Really the Modes?
 
-<!--
-Purpose:
-- Add a short credibility check before making the Hawking connection: show that the structures in the animation are the modes predicted by the dispersion diagram, not numerical texture or plotting artifacts.
-- Keep this light and visual. This is not a numerical-methods section.
-- First mention in one sentence that the short-wavelength outgoing structure survives the higher-resolution run, so it is not tied to the grid scale.
-- Figure 6: compare the measured outgoing k-spectrum with the predicted roots. The strong k₅ peak and weaker k₁ peak land where the dispersion relation says they should; k₂ is allowed but is not appreciably populated.
-- Figure 7: make the key test stricter by projecting onto the original conserved laboratory frequency ω₀. This reveals that the weak k₁ peak is genuinely present at the same ω₀ as k₅ and has negative comoving frequency.
-- Figure 8: optional visual payoff. Filter the two observed roots and reconstruct their spacetime wave patterns. State clearly that the negative-norm panel is boosted only for visibility.
-- The section should answer one skeptical question: "How do we know the extra ripple is the negative-frequency partner we predicted?"
-- Do not introduce Bogoliubov coefficients or quantum particle creation yet; save that for the later quantum section.
--->
+The animation is suggestive — a strong outgoing wave, a fainter one trailing behind it — but by itself, it does not tell us what we are actually looking at. Short wavelengths are exactly where numerical artifacts like to hide. Before we trust this as physics, we should check it against what Figure 4 actually predicted.
 
-The raw animation is suggestive, but by itself it does not tell us which modes we are looking at. Short wavelengths can also be where numerical artifacts hide, so before going further we should check that the outgoing waves match the roots predicted by the dispersion relation.
+A first, easy check: running the simulation at higher spatial resolution does not make the short-wave structure disappear or shift. It sits at the same physical wavelength either way, so it is not just grid noise.
 
-- The short-wave structure remains at the same physical wavelength when the spatial resolution is increased.
-- In the outgoing region, its measured k-spectrum peaks at the predicted roots.
-- The dominant peak is k₅, the positive-norm outgoing branch.
-- A weaker peak appears at k₁, the negative-norm branch.
-- The mathematically allowed k₂ root is essentially unpopulated in this run.
+The more interesting check is in the spectrum itself.
 
 ![Figure_6](Figure_6.png)
-**Figure 6 — Outgoing spatial spectrum compared with the predicted roots.**  
-The measured spatial spectrum in the outgoing region is shown together with the predicted wavenumbers k1, k2, and k5 for the local flow. Two clear peaks appear at k1 and k5, while no comparable peak is seen at k2. This shows that the outgoing field is dominated by the negative-norm partner and the high-k positive-norm branch. Image by author.
+**Figure 6 — Outgoing spatial spectrum compared with the predicted roots.** The measured spatial spectrum in the outgoing region is shown together with the predicted wavenumbers k₁, k₂, and k₅ for the local flow. Two clear peaks appear at k₁ and k₅, while no comparable peak is seen at k₂. This shows that the outgoing field is dominated by the negative-norm partner and the high-k positive-norm branch. Image by author.
 
-*Alt text: Dark-background plot of power versus wavenumber k. Three dashed vertical lines mark the predicted roots k1, k2, and k5. The measured spectrum shows a strong peak near k5, a weaker peak near k1, and no substantial peak near k2.*
+*Alt text: Dark-background plot of power versus wavenumber k. Three dashed vertical lines mark the predicted roots k1, k2, and k5. The measured spectrum shows a strong peak near k5, a weaker peak near k1, no substantial peak near k2, and a small, unlabeled feature near k=0.*
+
+Two things stand out. The dominant peak sits exactly at *k₅* — no surprise, that is where most of the energy goes. But there is also a smaller, clearly visible peak at *k₁*, right where Figure 4 said the negative-norm partner should be. The mathematically allowed k₂ root, by contrast, is essentially unpopulated: whatever mechanism launches *k₁* and *k₅* evidently does not favour *k₂*.
+
+There is also a small, weak feature near *k* = 0 that does not line up with any predicted root. This is an ordinary spatial spectrum, taken over a finite window in both space and time — and a finite, localized packet in a finite window will always leak a little power into wavelengths that are not conserved-frequency solutions at all. So this feature does not necessarily mean anything is wrong; it just means Figure 6 alone is not a strict enough test.
+
+That stricter test is a projection onto the one conserved quantity we actually trust: the original launch frequency, ω₀.
 
 ![Figure_7](Figure_7.png)
-**Figure 7 — Exact projection onto the launch frequency ω₀.**  
-This spectrum is obtained by projecting the outgoing signal onto the original laboratory frequency ω₀. The dominant peak at k5 is accompanied by a weaker but clearly visible peak at k1, showing that the negative-norm partner is present at the same conserved laboratory frequency. The predicted k2 root remains essentially absent. Image by author.
+**Figure 7 — Exact projection onto the launch frequency ω₀.** This spectrum is obtained by projecting the outgoing signal onto the original laboratory frequency ω₀. The dominant peak at k5 is accompanied by a weaker but clearly visible peak at k1, showing that the negative-norm partner is present at the same conserved laboratory frequency. The predicted k2 root remains essentially absent. Image by author.
 
 *Alt text: Dark-background plot of power versus wavenumber k after exact projection onto frequency ω₀. Dashed vertical lines mark k1, k2, and k5. A large peak appears at k5 and a smaller peak at k1, while the spectrum stays near the floor around k2.*
 
+The *k* = 0 feature is gone. Projected exactly onto ω₀, only *k₅* and *k₁* survive — precisely the two roots Figure 4 predicted, and nothing else. That is the strongest evidence we have: the weak partner mode is not stray numerical content, because it passes a test that stray content does not.
+
+We can also just look at the waves themselves, filtered by root.
+
 ![Figure_8](Figure_8.png)
-**Figure 8 — Mode-filtered reconstruction of the two outgoing components.**  
-The outgoing field is filtered around the two observed roots to reconstruct the corresponding wave components in space and time. The top panel shows the weak negative-norm mode, displayed with amplified contrast, while the bottom panel shows the dominant positive-norm mode. This makes the missing partner directly visible in the data rather than only in a spectrum. Image by author.
+**Figure 8 — Mode-filtered reconstruction of the two outgoing components.* The outgoing field is filtered around the two observed roots to reconstruct the corresponding wave components in space and time. The top panel shows the weak negative-norm mode, displayed with amplified contrast, while the bottom panel shows the dominant positive-norm mode. This makes the missing partner directly visible in the data rather than only in a spectrum. Image by author.
 
 *Alt text: Two stacked space-time panels on a dark background. The top panel shows a faint striped wave pattern labeled as the negative-norm mode and displayed with boosted amplitude. The bottom panel shows a stronger striped wave pattern labeled as the positive-norm mode. A horizontal color bar indicates filtered wave amplitude.*
 
-The important point is not that every allowed root must appear. The scattering determines how strongly each mode is populated. What matters here is that the two modes we do observe occur at the predicted wavenumbers — and that the weak k₁ component survives an exact projection onto the original conserved frequency ω₀.
+Filter the raw field around *k₁* and around *k₅*, and both come back as clean, ordinary-looking wave packets — not noise dressed up to look like a signal.
+
+Note that we should not expect every mathematically allowed root to show up with equal strength. The scattering process determines how much energy goes where, and *k₂* simply gets very little of it in this run. What matters is that the two modes we do see land exactly where predicted, and survive the strictest test we can throw at them.
 
 ---
 
 ## This Is Not Just A Simulation
 
-<!--
-Purpose:
-- Move from our validated numerical mode conversion to real analogue-gravity experiments.
-- Show that blocking and conversion into positive- and negative-norm modes have actually been measured in flowing water.
-- Emphasize that these experiments, like our simulation, are stimulated classical scattering experiments.
-- Keep the interpretation classical here; the spontaneous quantum step comes later.
--->
+Everything so far has happened inside a computer. It is worth pausing to ask: has anyone actually done this with real water?
 
-- Schützhold and Unruh proposed shallow-water surface waves as a controllable analogue system.
-- Rousseaux and colleagues observed the conversion of an incident positive-frequency wave into a negative-frequency component in moving water, and describe this positive/negative-frequency mixing as the classical mechanism associated with the Hawking process.
-- Weinfurtner and colleagues later launched long surface waves toward a white-hole blocking region and measured the resulting converted waves, explicitly describing their experiment as stimulated Hawking emission at a white-hole horizon.
-- The incoming wave was converted into shorter-wavelength components with positive and negative norm.
-- These experiments are stimulated:
-  - an incoming classical wave is deliberately supplied;
-  - the horizon scatters it into other modes.
+They have.
 
+Schützhold and Unruh were the first to propose shallow-water surface waves as a genuinely controllable analogue system for this physics — accessible, tunable, and, unlike an astrophysical black hole, something you could actually build on a lab bench.
 
+Rousseaux and colleagues put that proposal into practice. In a water tank, they sent long surface waves toward a horizon and observed exactly the conversion we have just been watching in simulation: an incoming positive-frequency wave partly converting into a negative-frequency component. They described this mixing as the classical mechanism underlying the Hawking process.
 
+Weinfurtner and colleagues took this further still. By placing a streamlined obstacle in an open channel, they created a genuine white-hole horizon — a region where the flow speeds up enough to block incoming waves, on the lee side of the obstacle, just like our simulated horizon. Long waves sent upstream toward that region were blocked and converted into short, dispersive waves, with amplitudes at the converted frequencies. They called this the stimulated Hawking emission of a white hole, and measured it directly.
+
+Note the word stimulated. Both experiments, like our simulation, start by deliberately sending a wave in. The horizon then does the converting. That distinction — stimulated versus something needing no input wave at all — is going to matter a great deal in a moment.
 
 ---
 
 ## Nice — But What Does This Have to Do With a Black Hole?
 
-<!--
-Purpose:
-- Make the main narrative pivot only after the water-wave physics has been established.
-- Ask the skeptical question explicitly.
-- Reveal the connection to Hawking through backwards propagation and time reversal.
-- Close the loop back to Figure 1.
--->
+So far we have learned something rather interesting about waves in flowing water. But a black hole in deep space contains neither water nor a wave generator.
 
-So far we have learned something rather interesting about waves in flowing water.
+> **What does any of this actually have to do with a black hole?**
 
-But a black hole in deep space contains neither water nor a wave generator.
+Here is Hawking's own argument, stripped to its essentials. Take a wave packet detected far from the black hole, long after anything interesting has happened. Instead of asking where it goes, ask where it came from: trace it backwards in time, back toward the horizon.
 
-**What does any of this have to do with Hawking radiation?**
+As that traced-back packet approaches the horizon, something dramatic happens to it. It gets squeezed and blueshifted, its wavelength shrinking without limit — exactly the runaway blueshift we met all the way back near the start of this post. And when you express that shrinking packet not in the distant observer's frame, but in the frame of someone falling freely across the horizon, it no longer looks like a single wave. It splits into two pieces: one with positive frequency, one with negative frequency, in that free-falling frame.
 
-- Start with a wave packet observed far from a black hole.
-- Hawking's reasoning can be understood by tracing such an outgoing mode backwards toward the horizon.
-- Close to the horizon:
-  - the backwards-traced packet becomes enormously blueshifted;
-  - when expressed relative to a freely falling observer, it contains both positive- and negative-frequency components.
-- Jacobson's treatment of quantum fields in curved spacetime emphasizes this distinction between frequency measured at infinity and frequency measured by a freely falling observer.
-- Now reverse the movie.
-- A black-hole process traced backwards becomes a white-hole scattering process traced forwards.
-- That is essentially the geometry we have just simulated and the water-wave experiments realize.
+That splitting is the heart of Hawking's calculation.
+
+Now, reverse the movie.
+
+Recall Figure 1: a black hole is a white hole, run backwards in time. So tracing an outgoing wave backwards toward a black-hole horizon is, played the other way, exactly a wave scattering forwards off a white-hole horizon — which is precisely the experiment we have been running all along, and precisely what Rousseaux's and Weinfurtner's water tanks actually built.
 
 
 ![Figure 9](Figure_9.png)
 **Figure 9 — Hawking's argument viewed backwards in time.** An outgoing wave packet detected far from the horizon can be traced backwards in time. Near the horizon, its precursor contains both positive- and negative-frequency components relative to a freely falling observer. Reversing this picture gives the corresponding white-hole scattering process used in analogue-gravity experiments. Image by author.
 
-**Alt text:** Dark-background spacetime diagram with time increasing upward and distance from the horizon along the horizontal axis. A dashed vertical line marks the horizon. A blue outgoing wave packet at late time is traced backwards toward the horizon, where it separates into a cyan positive-frequency precursor and a red negative-frequency precursor.
+*Alt text: Dark-background spacetime diagram with time increasing upward and distance from the horizon along the horizontal axis. A dashed vertical line marks the horizon. A blue outgoing wave packet at late time is traced backwards toward the horizon, where it separates into a cyan positive-frequency precursor and a red negative-frequency precursor.*
 
+So, the positive- and negative-frequency split we found sitting in our own dispersive simulation — *k₅* and *k₁* in Figure 4 — is not a coincidence, and it is not merely similar to what happens near a black hole. Run the tape backwards, and it is the same splitting, in the same place, for the same reason.
 ---
 
 ## From Negative Frequency to Particle Creation
 
-<!--
-Purpose:
-- Explain the quantum step as compactly as possible.
-- Connect the classical positive/negative-frequency mixing to creation and annihilation operators.
-- Immediately use this to distinguish spontaneous Hawking radiation from our stimulated classical experiment.
-- Avoid turning this into a standalone quantum-field-theory tutorial.
--->
+Classically, positive- and negative-frequency pieces are just two flavours of an ordinary wave. Nothing quantum has happened by simply splitting one into the other — we saw exactly that back when k₁ and k₂ first appeared in our simulation.
 
-Classically, positive- and negative-frequency components are simply parts of the wave field.
+Quantizing the field changes what that split means.
 
-The interpretation changes when the field is quantized.
+In quantum field theory, positive-frequency modes are paired with annihilation operators, and negative-frequency modes are paired with creation operators. A process that mixes the two — the way our horizon mixes k₅ and k₁, the way Hawking's backwards-traced packet mixes into positive and negative pieces near a black hole — is therefore not just reshaping a waveform. It is mixing creation and annihilation operators together.
 
-- Positive-frequency modes are associated with annihilation operators.
-- Negative-frequency modes are associated with creation operators.
-- A transformation that mixes positive and negative frequencies therefore mixes annihilation and creation operators.
-- In quantum field theory, this means that the definition of 'no particles' before and after the process is different.
-- Particle creation becomes possible.
+That has a strange consequence. The definition of "no particles present" before the mixing is no longer the same as the definition of "no particles present" after it. Once those two definitions disagree, particle creation becomes possible even starting from what looked like empty space.
 
-Possible pull quote:
+> **Classically, we see mode conversion. Quantize the same field, and positive/negative-frequency mixing becomes particle creation.**
 
-> **Classically we see mode conversion. Quantize the same field, and positive/negative-frequency mixing becomes particle creation.**
+This is the step that turns a classical scattering problem into Hawking radiation.
 
-### Did We Just Make Hawking Radiation?
+## Did We Just Make Hawking Radiation?
 
 No.
 
-- Our simulation begins with an incoming classical wave.
-- The water experiments deliberately inject a wave.
-- The horizon then scatters that excitation.
-- This is stimulated mode conversion.
-- Hawking radiation from a black hole is spontaneous:
-  - no incoming classical wave is needed;
-  - the quantum state itself supplies the fluctuations.
+Our simulation began with an incoming classical wave that we chose to send in. The water-tank experiments do exactly the same — a wave generator deliberately supplies the incoming signal, and the horizon scatters it. This is stimulated mode conversion.
 
-But stimulated and spontaneous processes are governed by the same underlying mode mixing.
+A real black hole needs no such push. Even starting from the vacuum, with no incoming wave at all, the same positive/negative-frequency mixing still happens to the quantum field — and the quantum state itself supplies what gets converted. That is spontaneous emission, and it is what Hawking actually predicted.
 
-That is why measuring the classical conversion is interesting.
-
-We are not creating an evaporating black hole in a water tank.
-
-We are probing one of the mechanisms that makes Hawking radiation possible.
-
+Stimulated and spontaneous processes share the same underlying mode mixing, which is exactly why measuring the classical, stimulated version is worth doing. We have not built an evaporating black hole in a water tank. We have built something that probes one of the mechanisms that makes Hawking radiation possible in the first place.
 ---
 
 ## How Close Can a Water Basin Get?
 
-<!--
-Purpose:
-- End with the scope and limitation of the analogy.
-- Emphasize what was genuinely demonstrated without implying that water reproduces full gravity.
-- Return to the unknown short-distance physics and the practical difficulty of observing astrophysical Hawking radiation.
-- Finish with an open question.
--->
+A water tank is not a black hole. Its flow does not obey Einstein's equations. Its surface waves are not photons escaping curved spacetime. And our numerical model is more abstract again — its dispersion relation was chosen to expose mode conversion clearly, not to match any particular real fluid.
 
-- A water tank is not a black hole.
-- Its background flow does not obey Einstein's equations.
-- Surface waves are not photons.
-- Our numerical model is more abstract still:
-  - its dispersion relation is deliberately simplified;
-  - its purpose is to expose blocking and mode conversion.
+So, what has this experiment actually shown us?
 
-What analogue systems can reproduce includes:
+What it reproduces is real: horizon kinematics, the runaway blueshift of the nondispersive approximation, the way modified high-frequency dispersion tames that blueshift, positive/negative-frequency mode conversion at the horizon, and stimulated scattering that behaves exactly as the water-tank measurements found.
 
-- horizon kinematics;
-- the runaway blueshift of the nondispersive approximation;
-- the effect of modified high-frequency dispersion;
-- positive/negative-frequency mode conversion;
-- stimulated horizon scattering.
+What it does not reproduce is just as real: the dynamics of spacetime itself, the full quantum state around an astrophysical black hole, and spontaneous emission from the vacuum.
 
-What they do not automatically reproduce includes:
+The interesting point is perhaps not that our analogue has the "right" short-distance physics. We do not know what the right short-distance physics of spacetime actually is — nobody does. What analogue systems let us do instead is alter that unknown physics deliberately, on purpose, and watch what survives the change. We saw earlier that, across water, lattice-like dispersion, and even light in a nonlinear medium, the same mode-conversion mechanism keeps showing up. That robustness holds under suitable assumptions, in the models studied so far — it is not a proof that whatever real spacetime does at short distances behaves the same way. Whether an actual black hole satisfies those assumptions remains genuinely open.
 
-- the dynamics of spacetime governed by Einstein's equations;
-- the complete quantum state around an astrophysical black hole;
-- spontaneous quantum Hawking emission.
+There is also a much more mundane obstacle to observing the real thing. For a stellar-mass black hole, the predicted Hawking temperature sits far below the temperature of the cosmic microwave background surrounding it — so even if nothing else stood in the way, the radiation would be swamped before it could ever be measured directly.
 
-The important point is perhaps not that our analogue has the 'right' short-distance physics.
+Which leaves analogue experiments, water tanks among them, as some of the closest working routes we currently have to the physics behind Hawking's prediction.
 
-We do not know what the right short-distance physics of spacetime is.
-
-Instead, analogue systems let us alter that physics deliberately and see what survives. Under a broad range of conditions studied so far, Hawking-like mode conversion does survive — although whether real black holes satisfy all the assumptions required for that robustness remains an open question, as Barceló, Liberati and Visser discuss in their review of the field.
-
-Direct Hawking radiation from ordinary astrophysical black holes is also extraordinarily difficult to observe: for stellar-mass black holes the expected Hawking temperature is far below the surrounding cosmic microwave background.
-
-So analogue experiments may be among the closest experimental routes we currently have to the physics underlying Hawking's prediction.
+So, we are back to the question this post opened with, sharper now than it was at the start: how much of that mechanism actually needs a black hole at all?
 
 **How much of Hawking radiation belongs specifically to gravity — and how much belongs to horizons themselves?**
 
 ---
 
 ## References
-
-<!--
-Purpose:
-- Keep the reference list focused on papers actually used in the narrative.
-- Prefer original sources for the key conceptual steps.
-- Distinguish clearly between the original Hawking result, analogue proposals, stimulated experiments, and modified-dispersion studies.
--->
-
-Core references:
-
-1. S. W. Hawking — original black-hole radiation paper.
-2. W. G. Unruh (1981) — acoustic black-hole analogy.
-3. R. Schützhold & W. G. Unruh (2002) — gravity-wave / water-wave analogue.
-4. G. Rousseaux et al. (2008) — observation of negative-frequency waves in water.
-5. S. Weinfurtner et al. (2010 / 2013) — stimulated Hawking emission in surface waves.
-6. U. Leonhardt & S. Robertson (2012) — Hawking radiation in dispersive media.
-7. C. Barceló, S. Liberati & M. Visser — analogue-gravity review and UV robustness.
-8. T. Jacobson — quantum fields in curved spacetime, Hawking effect, and the trans-Planckian question.
-
-<!--
-Specific sourcing cautions:
-
-- Do not imply that Hawking proposed a particular Planck-scale dispersion relation.
-- Standard semiclassical Hawking theory uses ordinary local relativistic quantum field theory.
-- The actual microscopic high-frequency behaviour of spacetime is unknown.
-- Modified-dispersion models often recover Hawking-like behaviour under suitable assumptions; do not claim complete independence from UV physics.
-- The exact four-root structure belongs to our toy model.
-- Water-wave experiments generally discuss three relevant counter-propagating roots.
-- Distinguish negative comoving frequency from merely negative k or leftward propagation.
-- Distinguish classical stimulated mode conversion from spontaneous quantum Hawking radiation.
--->
+References
+1. S. W. Hawking, "Particle Creation by Black Holes." Communications in Mathematical Physics 43, 199–220 (1975).
+2. W. G. Unruh, "Experimental Black-Hole Evaporation?" Physical Review Letters 46, 1351–1353 (1981).
+3. R. Schützhold & W. G. Unruh, "Gravity Wave Analogues of Black Holes." Physical Review D 66, 044019 (2002).
+4. G. Rousseaux, C. Mathis, P. Maïssa, T. G. Philbin & U. Leonhardt, "Observation of Negative-Frequency Waves in a Water Tank: A Classical Analogue to the Hawking Effect?" New Journal of Physics 10, 053015 (2008).
+5. S. Weinfurtner, E. W. Tedford, M. C. J. Penrice, W. G. Unruh & G. A. Lawrence, "Measurement of Stimulated Hawking Emission in an Analogue System." Physical Review Letters 106, 021302 (2011).
+6. U. Leonhardt & S. Robertson, "Analytical Theory of Hawking Radiation in Dispersive Media." New Journal of Physics 14, 053003 (2012).
+7. C. Barceló, S. Liberati & M. Visser, "Analogue Gravity." Living Reviews in Relativity 14, 3 (2011).
+8. T. Jacobson, "Introduction to Quantum Fields in Curved Spacetime and the Hawking Effect." Lecture notes (2004).
+9. M. F. Linder, R. Schützhold & W. G. Unruh, "Derivation of Hawking Radiation in Dispersive Dielectric Media." Physical Review D 93, 104010 (2016).
