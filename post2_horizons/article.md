@@ -6,9 +6,9 @@
 **Feature image** — Wave approaching a white-hole horizon. Image generated with PyVista by author.
 *Alt text: Colored visualization of a wave approaching a white-hole horizon. The wave gets compressed near the horizon.*
 
-A black-hole horizon is a point of no return. Cross it, and even light cannot get back out. This is the story we all know; a striking fact about spacetime. Nobody gets to walk up to a real horizon to see what happens.
+A black-hole horizon is a point of no return. Cross it, and even light cannot get back out. This is the story we all know; a striking fact about spacetime. But, nobody gets to walk up to a real horizon to see what happens.
 
-But the equation describing a wave near a black-hole horizon is, mathematically, the same as the equation for a wave in a fast-flowing fluid. Can we use that to actually build a horizon? Take a channel of moving water, shape the flow, and create a boundary a wave cannot cross. With this, we can send a wave at the horizon and watch what happens.
+**The** equation describing a wave near a black-hole horizon is, mathematically, the same as the equation for a wave in a fast-flowing fluid. Can we use that to actually build a horizon? Take a channel of moving water, shape the flow, and create a boundary a wave cannot cross. With this, we can send a wave at the horizon and watch what happens.
 
 In fact, scientists have been running this experiment, and what is observed reaches close to one of the most famous predictions in black-hole physics: Hawking radiation. This triggers the question: how much of that mechanism actually needs a black hole at all?
 
@@ -82,7 +82,7 @@ That is the point: for a real white-hole horizon, we do not know what the disper
 
 > **The point is not that water has the right microscopic physics. The point is that we do not know the right microscopic physics — so we can ask what survives when we change it.**
 
-This turns out to be a well-studied question, and the answer is reassuring. Push the same wave-equation-near-a-horizon problem through several completely different high-frequency cutoffs — water's own gravity-capillary dispersion, a lattice-like quartic modification, even a laser pulse propagating through a nonlinear dielectric medium — and the same qualitative mode-conversion behaviour keeps showing up. Unruh and Schützhold went as far as naming this the 'universality' of the effect.
+This turns out to be a well-studied question, and the answer  reassuring. Push the same wave-equation-near-a-horizon problem through several completely different high-frequency cutoffs — water's own gravity-capillary dispersion, a lattice-like quartic modification, even a laser pulse propagating through a nonlinear dielectric medium — and the same qualitative mode-conversion behaviour keeps showing up. Unruh and Schützhold went as far as naming this the 'universality' of the effect.
 ---
 
 ## Turn On Dispersion
@@ -105,7 +105,7 @@ So, launch the same kind of wave packet at the same sharp horizon, only now with
 
 ![Figure_5](Figure_5.gif)
 
-**Figure 5 — Wave approaching a sharp horizon with dispersion.** Once wave speed depends on wavelength, the blueshift changes the propagation itself. Near the blocking region the incoming packet converts into additional wave components. One returns toward the slow-flow region, while another mode can continue into the fast-flow side of the white-hole horizon. Image by author..
+**Figure 5 — Wave approaching a sharp horizon with dispersion.** Once wave speed depends on wavelength, the blueshift changes the propagation itself. Near the blocking region the incoming packet converts into additional wave components. One returns toward the slow-flow region, while another mode can continue into the fast-flow side of the white-hole horizon. Image by author.
 
 *Alt text: Animation of a dispersive wave packet approaching a sharp white-hole horizon. As the incoming packet reaches the blocking region, shorter-wavelength components appear. One propagates back toward the slow-flow region while another component continues through the horizon into the fast-flow region.*
 
@@ -115,22 +115,20 @@ In the nondispersive case before the wave either disappeared or bounced straight
 
 ## One Frequency, Several Waves
 
-So, that is the mechanism: because the flow is steady, the wave's laboratory-frame frequency ω stays fixed all the way to the horizon. In a nondispersive medium, that would pin down a single wavenumber, and nothing more could happen. But the moment the dispersion curve bends, a fixed ω can correspond to several different *k* at once — and as the flow changes, which roots exist, and how many, can change too.
+So, this is the mechanism: the wave's laboratory-frame frequency ω stays fixed all the way to the horizon. In a nondispersive medium, that would pin down a single wavenumber at each position. But the moment the dispersion curve bends, a fixed ω can correspond to several different wavenumbers at once — and as the flow changes, which roots exist, and how many, can change too.
 
 That is exactly what Figure 4 showed us. The incoming root vanished once the flow went supercritical, and two new roots, *k₁* and *k₂*, appeared in its place — both with negative ω′.
 
-What does a negative comoving frequency actually mean?
+What does a negative (comoving) frequency actually mean? Not that the wave is somehow travelling backwards, or that its wavelength has gone negative. ω′ is simply the frequency this wave would be measured to have by an observer moving with the water. For *k₁* and *k₂*, that measured frequency comes out negative. The wave is still an entirely ordinary, real, classical solution of the wave equation — it oscillates, it carries energy, it looks like any other ripple if you just watched it go by. The only strange thing about it is that in the lab frame the frequency is positive while a co-moving observer would call its frequency negative.
 
-Not that the wave is somehow travelling backwards, or that its wavelength has gone negative. ω′ is simply the frequency this wave would be measured to have by an observer moving with the water. For *k₁* and *k₂*, that measured frequency comes out negative. The wave is still an entirely ordinary, real, classical solution of the wave equation — it oscillates, it carries energy, it looks like any other ripple if you just watched it go by. The only strange thing about it is what a co-moving observer would call its frequency.
-
-Note that this sign is not just bookkeeping. In the conserved inner product that governs how these wave amplitudes combine, a negative-ω′ mode carries negative norm. We are not going to need the details of that inner product here — but the sign itself is going to matter a great deal once we get to the quantum version of this story.
+In the conserved inner product that governs how these wave amplitudes combine, a negative-ω′ mode carries negative norm. We are not going to need the details of that inner product here — but the sign itself is going to matter a great deal once we get to the quantum version of this story.
 
 One caveat before we move on. Our simulation's dispersion relation happens to produce four roots at once (*k₁*, *k₂*, *k₄*, *k₅* across the two panels — *k₃* was the incoming wave itself). That particular number is a feature of the toy dispersion we chose for this simulation, not a universal fact about horizons. Real water-tank experiments typically discuss three relevant counter-propagating roots. The physics we care about — a positive-norm and a negative-norm partner appearing together — is the same either way; the extra root is just our model's own bookkeeping.
 ---
 
 ## Are These Really the Modes?
 
-The animation is suggestive — a strong outgoing wave, a fainter one trailing behind it — but by itself, it does not tell us what we are actually looking at. Short wavelengths are exactly where numerical artifacts like to hide. Before we trust this as physics, we should check it against what Figure 4 actually predicted.
+The animation is suggestive, but by itself, it does not tell us what we are actually looking at. Short wavelengths are exactly where numerical artifacts like to hide. Before we trust this as physics, we should check Figure 5 against what Figure 4 actually predicted.
 
 A first, easy check: running the simulation at higher spatial resolution does not make the short-wave structure disappear or shift. It sits at the same physical wavelength either way, so it is not just grid noise.
 
@@ -179,7 +177,7 @@ Rousseaux and colleagues put that proposal into practice. In a water tank, they 
 
 Weinfurtner and colleagues took this further still. By placing a streamlined obstacle in an open channel, they created a genuine white-hole horizon — a region where the flow speeds up enough to block incoming waves, on the lee side of the obstacle, just like our simulated horizon. Long waves sent upstream toward that region were blocked and converted into short, dispersive waves, with amplitudes at the converted frequencies. They called this the stimulated Hawking emission of a white hole, and measured it directly.
 
-Note the word stimulated. Both experiments, like our simulation, start by deliberately sending a wave in. The horizon then does the converting. That distinction — stimulated versus something needing no input wave at all — is going to matter a great deal in a moment.
+Note the word stimulated. Both experiments, like our simulation, start by deliberately sending a wave in. The horizon then does the converting. 
 
 ---
 
