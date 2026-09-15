@@ -22,11 +22,15 @@ Now apply quantum physics. In quantum field theory, positive-frequency modes are
 
 So how, exactly, does Bob use the water to answer his question? He can move the water surface at a fixed frequency, and measure the wavelength that comes out. In the frame where the water is at rest, surface waves obey their own intrinsic dispersion relation:
 
-Ω² = g k tanh(kh)
+$$
+\Omega^2 = gk\tanh(kh)
+$$
 
 This relation ties frequency Ω and wavenumber k together in one specific way, and only in one specific frame. If Bob is moving relative to the water, the frequency he measures is Doppler-shifted:
 
-ω_B = Ω(k) − vk
+$$
+\omega_B = \Omega(k) - vk
+$$
 
 So, the same drive frequency no longer corresponds to the same wavelength. At rest relative to the water, his fixed frequency picks out one wavenumber. Moving relative to it, that same frequency picks out a different one. Measure the wavelength, and Bob has measured his own speed; not some absolute speed, but his speed relative to the water.
 
@@ -52,19 +56,24 @@ Note that "no preferred frame" on its own does not single out relativity. Ordina
 
 Let's start with a hyperbolic dispersion relation and ask what kind of 'ether' it would describe:
 
-ω(k) = √(ω₀² + c²k²)
+$$
+\omega(k) = \sqrt{\omega_0^2 + c^2k^2}
+$$
 
 Under a Galilean change of observer, wavenumber stays fixed while frequency shifts by the relative velocity (the Doppler shift):
 
-k′ = k
-ω′ = ω − vk
+$$
+k' = k, \qquad \omega' = \omega - vk
+$$
 
 Plug that in, and the relation changes shape entirely — a new observer moving at speed v no longer sees a wave obeying the same curve. The dispersion relation itself is observer-dependent, which is just another way of saying that a Galilean observer could, in principle, use it to find their own speed, the same way Bob used the water.
 
 Now do the same thing with a Lorentz transformation instead:
 
-ω′ = γ(ω − vk)
-k′ = γ(k − vω/c²)
+$$
+\omega' = \gamma(\omega-vk), \qquad
+k' = \gamma\left(k-\frac{v\omega}{c^2}\right)
+$$
 
 Here something different happens. Individual points — a given ω and k — do change coordinates; a wave that looked like frequency ω to one observer really does look like a different frequency ω′ to another. But plug the transformed ω′ and k′ back into the original relation, and they still satisfy it. The point has moved, but it has moved along the same hyperbola.
 
@@ -74,7 +83,9 @@ That is the property we were looking for. A wave obeying this dispersion relatio
 
 So, just taking the hyperbola
 
-ω² − c²k² = ω₀²
+$$
+\omega^2-c^2k^2=\omega_0^2
+$$
 
 as a dispersion curve does not, on its own, give us an undetectable 'ether'. We need to add the mixing of space and time components that follow from a Lorentz transformation. The medium that does the trick is, ultimately, space-time itself.
 
