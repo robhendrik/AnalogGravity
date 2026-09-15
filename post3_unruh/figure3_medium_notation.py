@@ -78,8 +78,9 @@ OUTPUT_PATH = SCRIPT_DIR / "Figure_3.png"
 
 C = 1.0
 
-# Carrier angular frequency.
-OMEGA0 = 600.0
+# Alice's monochromatic Minkowski angular frequency.
+# Omega below is reserved for the Fourier-frequency coordinate.
+OMEGA_M = 600.0
 
 # Stronger acceleration for the visual helix so the chirp is obvious.
 KAPPA_HELIX = 5.0
@@ -116,7 +117,7 @@ def sigma_from_cycles(
         n_cycles
         * 2.0
         * np.pi
-        / (6.0 * OMEGA0)
+        / (6.0 * OMEGA_M)
     )
 
 
@@ -226,7 +227,7 @@ def packet_field(
 
     carrier = np.exp(
         -1j
-        * OMEGA0
+        * OMEGA_M
         * u
     )
 
@@ -397,7 +398,7 @@ def alice_analytic_spectrum(
             SIGMA_SPEC_ALICE
             * (
                 omega_axis
-                - OMEGA0
+                - OMEGA_M
             )
         )
         ** 2
@@ -693,7 +694,9 @@ def plot_helix(
         lw=0.85,
         alpha=0.70,
     )
-
+    # Illustrative time axis: keep the axis but remove numerical tick labels.
+    ax.set_xticklabels([])
+    ax.set_xticks([])
     ax.set_xlabel(
         time_label,
         labelpad=9,
@@ -767,7 +770,7 @@ def style_spectrum_axes(
     )
 
     ax.set_xlabel(
-        r"frequency  $\Omega$",
+        r"Fourier frequency  $\Omega$",
         color=FG,
     )
 
@@ -779,7 +782,7 @@ def style_spectrum_axes(
     ax.text(
         0.24,
         0.92,
-        r"$-\Omega$",
+        r"$\Omega < 0$",
         transform=ax.transAxes,
         color=RED,
         fontsize=SIGN_SIZE,
@@ -787,9 +790,9 @@ def style_spectrum_axes(
     )
 
     ax.text(
-        0.76,
+        0.88,
         0.92,
-        r"$+\Omega$",
+        r"$\Omega > 0$",
         transform=ax.transAxes,
         color=BLUE,
         fontsize=SIGN_SIZE,
@@ -1002,6 +1005,20 @@ def main() -> None:
         alice_db,
     )
 
+    ax_alice_spec.annotate(
+        r"Alice's carrier $\omega$",
+        xy=(OMEGA_M, -1.0),
+        xytext=(OMEGA_M - 460.0, -22.0),
+        color=BLUE,
+        fontsize=11,
+        ha="center",
+        arrowprops={
+            "arrowstyle": "->",
+            "color": BLUE,
+            "lw": 1.1,
+        },
+    )
+
     # -------------------------------------------------------------------------
     # Bob
     # -------------------------------------------------------------------------
@@ -1012,6 +1029,31 @@ def main() -> None:
         phi_bob_helix,
         r"Bob's proper time  $\tau$",
     )
+
+    # Bob's local instantaneous frequency changes continuously along
+    # the accelerated trajectory.  This is distinct from Omega, which
+    # labels the constant-frequency components in the Fourier spectrum.
+    ax_bob_wave.text2D(
+        0.50,
+        0.92,
+        r"$\omega(\tau)=\omega e^{-a\tau/c}$",
+        transform=ax_bob_wave.transAxes,
+        ha="center",
+        va="center",
+        fontsize=13,
+        color=FG,
+    )
+
+    # ax_bob_wave.text2D(
+    #     0.50,
+    #     0.855,
+    #     "instantaneous frequency changes",
+    #     transform=ax_bob_wave.transAxes,
+    #     ha="center",
+    #     va="center",
+    #     fontsize=11,
+    #     color=MUTED,
+    # )
 
     plot_spectrum(
         ax_bob_spec,
@@ -1097,7 +1139,7 @@ def main() -> None:
     )
 
     omega_bob_early = (
-        OMEGA0
+        OMEGA_M
         * np.exp(
             -KAPPA_HELIX
             * tau_early
@@ -1105,7 +1147,7 @@ def main() -> None:
     )
 
     omega_bob_late = (
-        OMEGA0
+        OMEGA_M
         * np.exp(
             -KAPPA_HELIX
             * tau_late
@@ -1121,8 +1163,8 @@ def main() -> None:
     )
 
     print(
-        f"carrier omega0                    = "
-        f"{OMEGA0:.3f}"
+        f"Alice Minkowski frequency omega_M = "
+        f"{OMEGA_M:.3f}"
     )
 
     print()
@@ -1204,8 +1246,8 @@ def main() -> None:
     )
 
     print(
-        r"Figure 3 — The same wave for Alice and accelerated Bob.\n",
-        r"Left: the complex phase of the wave is drawn as a helix, with its amplitude normalized to make the phase evolution visible. Alice sees evenly spaced turns: a single, constant frequency. Along Bob’s accelerated trajectory the same wave is chirped, so the turns progressively spread apart. Right: the Fourier spectra of finite wave packets show the consequence. Alice’s spectrum remains concentrated at positive frequency, while Bob’s accelerated sampling spreads the spectrum and introduces a small negative-frequency component (red). The acceleration has been exaggerated in the lower-left illustration to make the chirp visible; the spectra use a smaller acceleration and the actual wave-packet envelope."
+        r"Figure 3 — One frequency becomes a chirp.\n",
+        r"Left: Alice's Minkowski wave has one constant carrier frequency omega. Along Bob's accelerated trajectory, the same wave has an instantaneous frequency omega(tau)=omega exp(-a tau/c), so its phase turns progressively spread apart. Right: decomposing the signals into constant Fourier-frequency components Omega gives Alice a narrow positive-frequency spectrum, while Bob's chirped signal spreads over many Omega and develops a small negative-frequency component. The acceleration is exaggerated in the lower-left illustration to make the chirp visible; the spectra use a smaller acceleration and the actual wave-packet envelope."
     )
 
 if __name__ == "__main__":
