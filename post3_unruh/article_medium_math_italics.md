@@ -26,7 +26,7 @@ $$
 \Omega^2 = gk\tanh(kh)
 $$
 
-This relation ties frequency Ω and wavenumber k together in one specific way, and only in one specific frame. If Bob is moving relative to the water, the frequency he measures is Doppler-shifted:
+This relation ties frequency *Ω* and wavenumber *k* together in one specific way, and only in one specific frame. If Bob is moving relative to the water, the frequency he measures is Doppler-shifted:
 
 $$
 \omega_B = \Omega(k) - vk
@@ -66,7 +66,7 @@ $$
 k' = k, \qquad \omega' = \omega - vk
 $$
 
-Plug that in, and the relation changes shape entirely — a new observer moving at speed v no longer sees a wave obeying the same curve. The dispersion relation itself is observer-dependent, which is just another way of saying that a Galilean observer could, in principle, use it to find their own speed, the same way Bob used the water.
+Plug that in, and the relation changes shape entirely — a new observer moving at speed *v* no longer sees a wave obeying the same curve. The dispersion relation itself is observer-dependent, which is just another way of saying that a Galilean observer could, in principle, use it to find their own speed, the same way Bob used the water.
 
 Now do the same thing with a Lorentz transformation instead (γ is the familiar Lorentz factor):
 
@@ -77,7 +77,7 @@ k' = \gamma\left(k-\frac{v\omega}{c^2}\right)
 \gamma = \frac{1}{\sqrt{1-v^2/c^2}}
 $$
 
-Here something different happens. Individual points — a given ω and k — do change coordinates; a wave that looked like frequency ω to one observer really does look like a different frequency ω′ to another. But plug the transformed ω′ and k′ back into the original relation, and they still satisfy it. The point has moved, but it has moved along the same hyperbola.
+Here something different happens. Individual points — a given *ω* and *k* — do change coordinates; a wave that looked like frequency *ω* to one observer really does look like a different frequency *ω′* to another. But plug the transformed *ω′* and *k′* back into the original relation, and they still satisfy it. The point has moved, but it has moved along the same hyperbola.
 
 > **The dispersion relation itself, the shape of the curve, not the coordinates of any one point on it, stays exactly the same for every inertial observer.**
 
@@ -121,9 +121,9 @@ $$
 t(\tau) = \frac{c}{a}\sinh\!\left(\frac{a\tau}{c}\right), \qquad x(\tau) = \frac{c^2}{a}\cosh\!\left(\frac{a\tau}{c}\right)
 $$
 
-Here τ is Bob's own proper time, the time on his own wristwatch. Bob's velocity, as seen by Alice, v/c = tanh(aτ/c), approaches the speed of light as τ grows, but never reaches it. He is forever accelerating, forever getting closer to c.
+Here *τ* is Bob's own proper time, the time on his own wristwatch. Bob's velocity, as seen by Alice, v/c = tanh(aτ/c), approaches the speed of light as *τ* grows, but never reaches it. He is forever accelerating, forever getting closer to c.
 
-Now imagine a single, perfectly ordinary wave — a pure tone, one fixed frequency ω, of the kind Alice could send to any observer without a second thought. In Alice's coordinates, its phase depends only on t − x/c, the usual combination for a wave moving to the right. Substitute in Bob's hyperbolic trajectory, and t − x/c collapses into a single exponential in Bob's proper time,
+Now imagine a single, perfectly ordinary wave — a pure tone, one fixed frequency *ω*, of the kind Alice could send to any observer without a second thought. In Alice's coordinates, its phase depends only on t − x/c, the usual combination for a wave moving to the right. Substitute in Bob's hyperbolic trajectory, and t − x/c collapses into a single exponential in Bob's proper time,
 
 $$
 t - \frac{x}{c} = -\frac{c}{a}\, e^{-a\tau/c}
@@ -135,13 +135,13 @@ $$\phi(\tau) = \exp\!\left[i\,\frac{\omega c}{a}\, e^{-a\tau/c}\right]$$
 
 > **Alice sent one frequency. Bob receives a chirp.**
 
-To see what that chirp actually contains, Fourier-transform it with respect to Bob's own proper time. This produces a new spectral variable — call it Ω, to keep it distinct from Alice's original carrier frequency ω — which is the natural frequency label for Bob's own decomposition of the field.
+To see what that chirp actually contains, Fourier-transform it with respect to Bob's own proper time. This produces a new spectral variable — call it *Ω*, to keep it distinct from Alice's original carrier frequency *ω* — which is the natural frequency label for Bob's own decomposition of the field.
 
 ![Figure_3.png](Figure_3.png)
 
-**Figure 3 — One frequency becomes a chirp.** Left: the same wave, plotted as a helix against Alice's time (top) and Bob's proper time (bottom). For Alice the turns are evenly spaced — a single frequency. For Bob the turns compress at early times and stretch apart later, the signature of a continuously changing instantaneous frequency. Right: Fourier spectra of representative finite wave packets, plotted against Fourier frequency Ω; the acceleration used here differs from the helix panels, chosen purely for visual clarity. Alice's spectrum is a single sharp peak at +Ω. Bob's spreads into a broad peak and develops a faint tail reaching into negative Ω — the first hint that Bob's own decomposition into positive and negative frequency will not agree with Alice's. Image by author.
+**Figure 3 — One frequency becomes a chirp.** Left: the same wave, plotted as a helix against Alice's time (top) and Bob's proper time (bottom). For Alice the turns are evenly spaced — a single frequency. For Bob the turns compress at early times and stretch apart later, the signature of a continuously changing instantaneous frequency. Right: Fourier spectra of representative finite wave packets, plotted against Fourier frequency *Ω*; the acceleration used here differs from the helix panels, chosen purely for visual clarity. Alice's spectrum is a single sharp peak at +*Ω*. Bob's spreads into a broad peak and develops a faint tail reaching into negative *Ω* — the first hint that Bob's own decomposition into positive and negative frequency will not agree with Alice's. Image by author.
 
-*Alt text: Two pairs of plots. Top left, a 3D helix of constant pitch labelled Alice's time, representing a single-frequency wave. Bottom left, a helix labelled Bob's proper time, with turns compressed near one end and stretched apart near the other, showing a chirping frequency. Top right, a Fourier amplitude spectrum for Alice with a single sharp peak at positive frequency Ω and no content at negative Ω. Bottom right, a Fourier amplitude spectrum for Bob with a broadened peak at positive Ω and a small but nonzero tail extending into negative Ω.*
+*Alt text: Two pairs of plots. Top left, a 3D helix of constant pitch labelled Alice's time, representing a single-frequency wave. Bottom left, a helix labelled Bob's proper time, with turns compressed near one end and stretched apart near the other, showing a chirping frequency. Top right, a Fourier amplitude spectrum for Alice with a single sharp peak at positive frequency *Ω* and no content at negative *Ω*. Bottom right, a Fourier amplitude spectrum for Bob with a broadened peak at positive Ω and a small but nonzero tail extending into negative *Ω*.*
 
 It's worth being precise about what that negative-Ω content means. Bob's *instantaneous* frequency, ω(τ) = ω e^{−aτ/c}, is a decaying exponential — it stays strictly positive for every τ; nothing about what Bob experiences moment to moment ever runs the oscillation backwards. The negative-Ω content lives in the *Fourier decomposition* of the entire chirp, taken over all of Bob's proper time. It is a statement about how the complete signal breaks down into stationary building blocks, not about any frequency Bob would actually report at a single instant.
 
@@ -153,7 +153,7 @@ So far we studied the classical, non-quantum view: Alice's pure tone reaches Bob
 
 In the quantum theory, the split between positive and negative frequency is not just a labelling convention — it is *the* thing that tells us which operator is which. A positive-frequency mode pairs with an annihilation operator, â; a negative-frequency mode pairs with a creation operator, â†.
 
-We learned earlier that for accelerated Bob, a mode that was purely positive-frequency for Alice becomes a mix of positive and negative frequency in Bob's decomposition. Because his annihilation operator b̂ is built from that mixed decomposition, b̂ is itself a mixture of Alice's â and â† — weighted by two numbers, the Bogoliubov coefficients α and β. Their ratio depends on nothing but the ratio of frequency to acceleration:
+We learned earlier that for accelerated Bob, a mode that was purely positive-frequency for Alice becomes a mix of positive and negative frequency in Bob's decomposition. Because his annihilation operator b̂ is built from that mixed decomposition, b̂ is itself a mixture of Alice's â and â† — weighted by two numbers, the Bogoliubov coefficients *α* and *β*. Their ratio depends on nothing but the ratio of frequency to acceleration:
 
 $$\frac{|\beta|^2}{|\alpha|^2} = e^{-2\pi c \Omega/a}$$
 
