@@ -81,7 +81,7 @@ Here something different happens. Individual points — a given *ω* and *k* —
 
 > **The dispersion relation itself, the shape of the curve, not the coordinates of any one point on it, stays exactly the same for every inertial observer.**
 
-That is the property we were looking for. A wave obeying this dispersion relation gives no inertial observer a way to find a preferred frame, because there simply isn't one to find — every inertial observer describes the same physics with the same equation, just different coordinates on it. In the massless limit, ω₀ → 0, this reduces to the familiar ω = ±ck: light, unable to pick out a rest frame because there is nothing left in the equation for a frame to attach to.
+That is the property we were looking for. A wave obeying this dispersion relation gives no inertial observer a way to find a preferred frame, because there simply isn't one to find — every inertial observer describes the same physics with the same equation, just different coordinates on it. In the massless limit, *ω₀ → 0*, this reduces to the familiar *ω = ±ck*: light, unable to pick out a rest frame because there is nothing left in the equation for a frame to attach to.
 
 So, just taking the hyperbola
 
@@ -121,7 +121,7 @@ $$
 t(\tau) = \frac{c}{a}\sinh\!\left(\frac{a\tau}{c}\right), \qquad x(\tau) = \frac{c^2}{a}\cosh\!\left(\frac{a\tau}{c}\right)
 $$
 
-Here *τ* is Bob's own proper time, the time on his own wristwatch. Bob's velocity, as seen by Alice, v/c = tanh(aτ/c), approaches the speed of light as *τ* grows, but never reaches it. He is forever accelerating, forever getting closer to c.
+Here *τ* is Bob's own proper time, the time on his own wristwatch. Bob's velocity, as seen by Alice, *v/c = tanh(aτ/c)*, approaches the speed of light as *τ* grows, but never reaches it. He is forever accelerating, forever getting closer to c.
 
 Now imagine a single, perfectly ordinary wave — a pure tone, one fixed frequency *ω*, of the kind Alice could send to any observer without a second thought. In Alice's coordinates, its phase depends only on t − x/c, the usual combination for a wave moving to the right. Substitute in Bob's hyperbolic trajectory, and t − x/c collapses into a single exponential in Bob's proper time,
 
@@ -143,7 +143,7 @@ To see what that chirp actually contains, Fourier-transform it with respect to B
 
 *Alt text: Two pairs of plots. Top left, a 3D helix of constant pitch labelled Alice's time, representing a single-frequency wave. Bottom left, a helix labelled Bob's proper time, with turns compressed near one end and stretched apart near the other, showing a chirping frequency. Top right, a Fourier amplitude spectrum for Alice with a single sharp peak at positive frequency *Ω* and no content at negative *Ω*. Bottom right, a Fourier amplitude spectrum for Bob with a broadened peak at positive Ω and a small but nonzero tail extending into negative *Ω*.*
 
-It's worth being precise about what that negative-Ω content means. Bob's *instantaneous* frequency, ω(τ) = ω e^{−aτ/c}, is a decaying exponential — it stays strictly positive for every τ; nothing about what Bob experiences moment to moment ever runs the oscillation backwards. The negative-Ω content lives in the *Fourier decomposition* of the entire chirp, taken over all of Bob's proper time. It is a statement about how the complete signal breaks down into stationary building blocks, not about any frequency Bob would actually report at a single instant.
+It's worth being precise about what that negative-Ω content means. Bob's *instantaneous* frequency, *ω(τ) = ω e^{−aτ/c}*, is a decaying exponential — it stays strictly positive for every τ; nothing about what Bob experiences moment to moment ever runs the oscillation backwards. The negative-Ω content lives in the *Fourier decomposition* of the entire chirp, taken over all of Bob's proper time. It is a statement about how the complete signal breaks down into stationary building blocks, not about any frequency Bob would actually report at a single instant.
 
 A wave that had a positive frequency for Alice therefore picks up a negative-frequency component in Bob's decomposition. This could never happen for two observers at constant velocity, however different their speeds. Acceleration, it turns out, can make a wave that was purely positive-frequency for Alice contain both positive- and negative-frequency components in Bob's description.
 
@@ -163,7 +163,7 @@ $$\langle 0_A|\hat N_B|0_A\rangle = |\beta|^2$$
 
 That number is a mean occupation, not a click probability: evaluated on the state Alice calls empty, Bob's own number operator gives an expected particle count of |β|². Same state, same field — different answers.
 
-To pin down |β|² itself, we only need one more piece: the normalization that keeps the whole construction consistent, |α|² − |β|² = 1. Combined with the ratio above, it fixes |β|² exactly:
+To pin down |β|² itself, we only need one more piece: the normalization that keeps the whole construction consistent, *|α|² − |β|² = 1*. Combined with the ratio above, it fixes |β|² exactly:
 
 $$|\beta|^2 = \frac{1}{e^{2\pi c \Omega/a} - 1}$$
 
@@ -175,7 +175,7 @@ Alice's vacuum — genuinely empty, by her own reckoning — looks to Bob like a
 
 ![Figure_4.png](Figure_4.png)
 
-**Figure 4 — From mixed frequencies to a thermal spectrum.** Top: a schematic version of the classical picture from Figure 3 — not the same numerical spectrum, but the same qualitative split — showing Bob's decomposition divided into a positive-frequency part, |α|², and a negative-frequency part, |β|², whose ratio depends only on Ω/a. Bottom: quantizing the field turns positive frequency into an annihilation operator and negative frequency into a creation operator. Alice's vacuum contains no particles by her own count, but Bob's particle-number operator, built from his own mixture of creation and annihilation operators, assigns that same vacuum a nonzero, thermal occupation number. Image by author.
+**Figure 4 — From mixed frequencies to a thermal spectrum.** Top: a schematic version of the classical picture from Figure 3 — not the same numerical spectrum, but the same qualitative split — showing Bob's decomposition divided into a positive-frequency part, |α|², and a negative-frequency part, |β|², whose ratio depends only on *Ω/a*. Bottom: quantizing the field turns positive frequency into an annihilation operator and negative frequency into a creation operator. Alice's vacuum contains no particles by her own count, but Bob's particle-number operator, built from his own mixture of creation and annihilation operators, assigns that same vacuum a nonzero, thermal occupation number. Image by author.
 
 *Alt text: Two-part diagram. Top: two schematic frequency-domain plots (not numerically identical to Figure 3), labelled Alice — inertial and Bob — accelerated, connected by an arrow reading "same wave." Alice's spectrum has only a positive-frequency peak. Bob's spectrum has the same positive-frequency peak, now labelled |α|², plus a smaller negative-frequency component labelled |β|², with the ratio given as an exponential formula. Bottom: a quantization diagram showing positive frequency mapping to an annihilation operator â and negative frequency mapping to a creation operator â†, followed by boxed formulas for Alice's and Bob's number operators, showing that Bob's operator evaluated on Alice's vacuum equals |β|², given by a Bose-Einstein-like expression.*
 
