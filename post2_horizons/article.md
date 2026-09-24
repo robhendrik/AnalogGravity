@@ -83,6 +83,7 @@ That is the point: for a real white-hole horizon, we do not know what the disper
 > **The point is not that water has the right microscopic physics. The point is that we do not know the right microscopic physics — so we can ask what survives when we change it.**
 
 This turns out to be a well-studied question, and the answer  reassuring. Push the same wave-equation-near-a-horizon problem through several completely different high-frequency cutoffs — water's own gravity-capillary dispersion, a lattice-like quartic modification, even a laser pulse propagating through a nonlinear dielectric medium — and the same qualitative mode-conversion behaviour keeps showing up. Unruh and Schützhold went as far as naming this the 'universality' of the effect.
+
 ---
 
 ## Turn On Dispersion
@@ -124,6 +125,7 @@ What does a negative (comoving) frequency actually mean? Not that the wave is so
 In the conserved inner product that governs how these wave amplitudes combine, a negative-ω′ mode carries negative norm. We are not going to need the details of that inner product here — but the sign itself is going to matter a great deal once we get to the quantum version of this story.
 
 One caveat before we move on. Our simulation's dispersion relation happens to produce four roots at once (*k₁*, *k₂*, *k₄*, *k₅* across the two panels — *k₃* was the incoming wave itself). That particular number is a feature of the toy dispersion we chose for this simulation, not a universal fact about horizons. Real water-tank experiments typically discuss three relevant counter-propagating roots. The physics we care about — a positive-norm and a negative-norm partner appearing together — is the same either way; the extra root is just our model's own bookkeeping.
+
 ---
 
 ## Are These Really the Modes?
@@ -204,6 +206,7 @@ Recall Figure 1: a black hole is a white hole, run backwards in time. So tracing
 *Alt text: Dark-background spacetime diagram with time increasing upward and distance from the horizon along the horizontal axis. A dashed vertical line marks the horizon. A blue outgoing wave packet at late time is traced backwards toward the horizon, where it separates into a cyan positive-frequency precursor and a red negative-frequency precursor.*
 
 So, the positive- and negative-frequency split we found sitting in our own dispersive simulation — *k₅* and *k₁* in Figure 4 — is not a coincidence, and it is not merely similar to what happens near a black hole. Run the tape backwards, and it is the same splitting, in the same place, for the same reason.
+
 ---
 
 ## From Negative Frequency to Particle Creation
@@ -229,6 +232,7 @@ Our simulation began with an incoming classical wave that we chose to send in. T
 A real black hole needs no such push. Even starting from the vacuum, with no incoming wave at all, the same positive/negative-frequency mixing still happens to the quantum field — and the quantum state itself supplies what gets converted. That is spontaneous emission, and it is what Hawking actually predicted.
 
 Stimulated and spontaneous processes share the same underlying mode mixing, which is exactly why measuring the classical, stimulated version is worth doing. We have not built an evaporating black hole in a water tank. We have built something that probes one of the mechanisms that makes Hawking radiation possible in the first place.
+
 ---
 
 ## How Close Can a Water Basin Get?
