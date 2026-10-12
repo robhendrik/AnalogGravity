@@ -1,12 +1,11 @@
-# The SpeedS of Light
+# The Speeds of Light
 
-## How Dispersion Connects Rainbows to Hawking Radiation
+### How Dispersion Connects Rainbows to Hawking Radiation
 
 ![FEATURE IMAGE — SEVERN BORE](figures/feature_image.jpg)
-
-> **Feature image.** A tidal bore travelling upstream on the River Severn (Gloucestershire, UK). Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.
-
-*Alt text: A large tidal bore propagating upstream along the River Severn, forming a distinct moving front across the river. Photo: Jamie Cooper/Galaxy / Alamy Stock Photo.*
+> Caption: **Feature image. A tidal bore travelling upstream on the River Severn (Gloucestershire, UK).**
+> Alt text: A large tidal bore propagating upstream along the River Severn, forming a distinct moving front across the river.
+> Source: Photo by Jamie Cooper/Galaxy / Alamy Stock Photo.
 
 A wave has a speed — or so it seems. Measure the wavelength, count how often the crests pass, multiply. That simple picture is enough for most of what we meet in daily life.
 
@@ -26,7 +25,7 @@ Back in school, waves seemed simple.
 
 Draw a sinusoid. Measure its wavelength. Count how often the crests pass. From wavelength and frequency, we get a speed.
 
-For a sinusoidal wave, that speed is the **phase velocity**. We get it by multiplying frequency and wavelength, though the more common notation divides ω (the frequency times 2π) by the wavenumber $k$ (2π divided by the wavelength):
+For a sinusoidal wave, that speed is the **phase velocity**. We get it by multiplying frequency and wavelength, though the more common notation divides ω (the frequency times 2π) by the wavenumber *k* (2π divided by the wavelength):
 
 $$
 v_{\text{phase}} = \omega/k
@@ -43,18 +42,16 @@ Note that this only holds because we quietly assumed one thing: that the wave is
 Real waves are rarely infinite sinusoids. They come in pulses, bursts and packets. In a non-dispersive medium — where the phase velocity does not depend on frequency — these packets travel at the same speed as the phase.
 
 ![Figure 1](figures/figure_1.gif)
-
-**Figure 1. Phase and group velocity are the same in a nondispersive medium.** A wave packet travels without changing shape because the carrier oscillations and the packet envelope move together: group velocity equals phase velocity.
-
-*Alt text: Animation of a blue sinusoidal wave packet with a white envelope moving from left to right without changing shape. The carrier crests remain locked to the envelope, illustrating equal group and phase velocity.*
+> Caption: **Figure 1. Phase and group velocity are the same in a nondispersive medium. A wave packet travels without changing shape because the carrier oscillations and the packet envelope move together: group velocity equals phase velocity.**
+> Alt text: Animation of a blue sinusoidal wave packet with a white envelope moving from left to right without changing shape. The carrier crests remain locked to the envelope, illustrating equal group and phase velocity.
+> Source: Image by author.
 
 In a dispersive medium, this can be different. The crests can run forward through the packet, or the packet can overtake its own crests.
 
 ![Figure 2](figures/figure_2.gif)
-
-**Figure 2. Dispersion separates phase velocity from group velocity.** Top: two wave packets in which the carrier oscillations move at a different speed from the envelope. On the left, group velocity is smaller than phase velocity; on the right group velocity is higher. Bottom: the corresponding dispersion curves. The phase velocity is ω/k, while the group velocity is the local slope, dω/dk.
-
-*Alt text: Four-panel figure. The top-left animation shows a blue carrier wave moving faster than its white envelope, so group velocity is smaller than phase velocity. The top-right shows the envelope moving faster than the carrier, so group velocity is larger than phase velocity. The two lower panels show the corresponding curved omega-versus-k dispersion relations, with a short tangent at the selected point indicating the group velocity.*
+> Caption: **Figure 2. Dispersion separates phase velocity from group velocity. Top: two wave packets in which the carrier oscillations move at a different speed from the envelope. On the left, group velocity is smaller than phase velocity; on the right group velocity is higher. Bottom: the corresponding dispersion curves. The phase velocity is ω/k, while the group velocity is the local slope, dω/dk.**
+> Alt text: Four-panel figure. The top-left animation shows a blue carrier wave moving faster than its white envelope, so group velocity is smaller than phase velocity. The top-right shows the envelope moving faster than the carrier, so group velocity is larger. The two lower panels show the corresponding curved omega-versus-k dispersion relations, with a short tangent at the selected point indicating the group velocity.
+> Source: Image by author.
 
 So the packet has its own velocity, distinct from the phase velocity: the **group velocity**:
 
@@ -66,7 +63,7 @@ $$
 
 That derivative has a geometric meaning, and it is worth making concrete.
 
-Plot frequency ω vertically and wavenumber $k$ horizontally. Every possible sinusoidal wave the medium can support becomes a single point on a curve — the dispersion relation.
+Plot frequency ω vertically and wavenumber *k* horizontally. Every possible sinusoidal wave the medium can support becomes a single point on a curve — the dispersion relation.
 
 From that one curve, both velocities fall out almost for free. The phase velocity is the slope of the straight line connecting that point to the origin. The group velocity is the slope of the line tangent to the curve at that same point — the line that just touches the curve there and matches its local direction.
 
@@ -74,7 +71,7 @@ So, in the boundary case where the dispersion relation is itself a straight line
 
 Bend the curve, and the two lines pull apart.
 
-Note that this is really all dispersion is, geometrically: a curved ω($k$). If there is no bending, there is no dispersion, and there will be no distinction between the speed of the crests and the speed of the packet.
+Note that this is really all dispersion is, geometrically: a curved ω(*k*). If there is no bending, there is no dispersion, and there will be no distinction between the speed of the crests and the speed of the packet.
 
 That one geometric idea — a straight line through the origin against a tangent line — will carry us through the rest of the story.
 
@@ -133,18 +130,16 @@ In Figure 3 we show both views side by side: the dispersion curve as seen by the
 ## One Frequency, Several Waves
 
 ![FIGURE 3](figures/figure_3.gif)
-
-**Figure 3. The same moving medium viewed in two frames.** Left: in the laboratory frame, the frequency ω is fixed while the dispersion curve changes as the flow speed $u$ changes. Right: in the locally co-moving frame, the intrinsic water-wave dispersion stays fixed while the same conserved laboratory frequency appears as the tilted line ω′ = ω − *uk*. The white dots mark the same allowed modes in both views.
-
-*Alt text: Two animated dispersion plots shown side by side. In the laboratory-frame panel, a blue dispersion curve tilts and changes with flow speed while a red horizontal frequency line stays fixed. In the co-moving-frame panel, the blue water-wave dispersion curve stays fixed while a red straight line tilts as the flow speed changes. White dots mark the intersections in both panels, and the displayed flow speed passes through zero.*
+> Caption: **Figure 3. The same moving medium viewed in two frames. Left: in the laboratory frame, the frequency ω is fixed while the dispersion curve changes as the flow speed *u* changes. Right: in the locally co-moving frame, the intrinsic water-wave dispersion stays fixed while the same conserved laboratory frequency appears as the tilted line ω′ = ω − *uk*. The white dots mark the same allowed modes in both views.**
+> Alt text: Two animated dispersion plots shown side by side. In the laboratory-frame panel, a blue dispersion curve tilts and changes with flow speed while a red horizontal frequency line stays fixed. In the co-moving-frame panel, the blue water-wave dispersion curve stays fixed while a red straight line tilts as the flow speed changes. White dots mark the intersections in both panels, and the displayed flow speed passes through zero.
+> Source: Image by author.
 
 So, in Figure 3 we see something worth pausing on: for a wave in flowing water, the line representing the frequency measured by a co-mover — ω′ — does not cross the dispersion curve just once. It can cross it several times.
 
 ![Figure 4](figures/figure_4.png)
-
-**Figure 4. One frequency can correspond to several wave modes.** For a fixed laboratory frequency, the allowed wavenumbers are the intersections between the intrinsic water-wave dispersion relation and the Doppler-shifted line ω′ = ω − *uk*. Here there are three real solutions, k₁, k₂, and k₃: three distinct wave modes at the same laboratory frequency.
-
-*Alt text: Static omega-prime-versus-k dispersion plot. A blue curved water-wave dispersion relation is crossed by a red straight Doppler-shifted line. Three white intersection points are labelled k1, k2, and k3, showing that one fixed laboratory frequency can correspond to three different wavenumbers.*
+> Caption: **Figure 4. One frequency can correspond to several wave modes. For a fixed laboratory frequency, the allowed wavenumbers are the intersections between the intrinsic water-wave dispersion relation and the Doppler-shifted line ω′ = ω − *uk*. Here there are three real solutions, k₁, k₂, and k₃: three distinct wave modes at the same laboratory frequency.**
+> Alt text: Static omega-prime-versus-k dispersion plot. A blue curved water-wave dispersion relation is crossed by a red straight Doppler-shifted line. Three white intersection points are labelled k1, k2, and k3, showing that one fixed laboratory frequency can correspond to three different wavenumbers.
+> Source: Image by author.
 
 Each intersection between the ω′-line and the dispersion curve is a genuine, allowed wave. All three share exactly the same frequency in the laboratory frame — but they have different wavelengths, different phase velocities, different group velocities, and even different directions of propagation.
 

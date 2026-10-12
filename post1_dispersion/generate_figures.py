@@ -91,8 +91,8 @@ OUTPUT_DIR = Path("figures")
 FIGSIZE = (12, 6.5)
 FIGSIZE_2X2 = (12, 9.0)
 
-DPI = 160
-FPS = 24
+DPI = 70 # was 160
+FPS = 24 # was 24 leading to Medium issues
 
 # Keep the apparent animation speed consistent between figures.
 #
@@ -238,8 +238,8 @@ def figure_1(fps: int, make_gif: bool, make_mp4: bool) -> None:
     k0 = 6.5
     sigma = 1.65
 
-    x_start = -10.0 - 4.5 * sigma
-    x_end = +10.0 + 4.5 * sigma
+    x_start = -10.0 - 0 * sigma
+    x_end = +10.0 + 0 * sigma
 
     duration = (x_end - x_start) / c
     n_frames = number_of_frames(duration, fps)
@@ -355,8 +355,8 @@ def figure_2(fps: int, make_gif: bool, make_mp4: bool) -> None:
     vg_right *= velocity_scale
 
     # Both packets start completely outside the left-hand side.
-    x_start = -12.0 - 4.5 * sigma
-    x_end = +12.0 + 4.5 * sigma
+    x_start = -12.0 - 0 * sigma
+    x_end = +12.0 + 0 * sigma
 
     # Keep the same apparent speed as before.  Use the slower envelope to
     # determine when the animation can safely loop.
@@ -608,7 +608,7 @@ def figure_3(fps: int, make_gif: bool, make_mp4: bool) -> None:
 
     # Smooth loop:
     #   zero flow -> beyond tangency -> zero flow
-    half_frames = 120
+    half_frames = 120  # Previously 120
     u_down = np.linspace(0.0, u_min, half_frames, endpoint=False)
     u_up = np.linspace(u_min, 0.0, half_frames)
     u_values = np.concatenate([u_down, u_up])
