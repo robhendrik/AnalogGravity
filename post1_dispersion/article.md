@@ -11,7 +11,7 @@ A wave has a speed — or so it seems. Measure the wavelength, count how often t
 
 For the wave trying to travel upstream in the photo above, though, the current carries the water one way while the wave tries to travel the other. If the current becomes strong enough, can the wave simply stop?
 
-Interestingly enough, this question takes us close to black-hole physics. Waves moving through flowing water can obey much the same mathematics as waves near a black-hole horizon. Push the analogy further, and we can reproduce some of the classical physics behind Hawking radiation — in a water basin.
+Interestingly enough, this question takes us close to black-hole physics. Waves moving through flowing water can obey much the same mathematics as waves near a black-hole horizon [1, 2, 3]. Push the analogy further, and we can reproduce some of the classical physics behind Hawking radiation [4] — in a water basin [5, 6].
 
 In this post, we will discuss what we actually mean by the speed of a wave, and why, once the medium itself starts moving, that question stops being so simple.
 
@@ -46,14 +46,14 @@ Real waves are rarely infinite sinusoids. They come in pulses, bursts and packet
 > Alt text: Animation of a blue sinusoidal wave packet with a white envelope moving from left to right without changing shape. The carrier crests remain locked to the envelope, illustrating equal group and phase velocity.
 > Source: Image by author.
 
-In a dispersive medium, this can be different. The crests can run forward through the packet, or the packet can overtake its own crests.
+In a dispersive medium, this can be different [7]. The crests can run forward through the packet, or the packet can overtake its own crests.
 
 ![Figure 2](figures/figure_2.gif)
 > Caption: **Figure 2. Dispersion separates phase velocity from group velocity. Top: two wave packets in which the carrier oscillations move at a different speed from the envelope. On the left, group velocity is smaller than phase velocity; on the right group velocity is higher. Bottom: the corresponding dispersion curves. The phase velocity is ω/k, while the group velocity is the local slope, dω/dk.**
 > Alt text: Four-panel figure. The top-left animation shows a blue carrier wave moving faster than its white envelope, so group velocity is smaller than phase velocity. The top-right shows the envelope moving faster than the carrier, so group velocity is larger. The two lower panels show the corresponding curved omega-versus-k dispersion relations, with a short tangent at the selected point indicating the group velocity.
 > Source: Image by author.
 
-So the packet has its own velocity, distinct from the phase velocity: the **group velocity**:
+So the packet has its own velocity, distinct from the phase velocity: the **group velocity** [7]:
 
 $$
 v_{\text{group}} = d\omega/dk
@@ -89,9 +89,9 @@ A rainbow adds some extra physics on top — refraction, reflection inside water
 
 Different physical systems produce remarkably different dispersion curves, and it is worth walking through a few to see how much the shape of that curve actually tells us.
 
-An ideal, continuous string or rope is essentially non-dispersive — a straight line through the origin, phase and group velocity locked together. Add discrete masses along it, like beads on a rope, and the curve bends: the discreteness of the beads places a limit on the waves the chain can carry, and the curve eventually reaches a maximum frequency it cannot exceed.
+An ideal, continuous string or rope is essentially non-dispersive — a straight line through the origin, phase and group velocity locked together. Add discrete masses along it, like beads on a rope, and the curve bends: the discreteness of the beads places a limit on the waves the chain can carry, and the curve eventually reaches a maximum frequency it cannot exceed [8].
 
-For surface waves on water, two different mechanisms compete to set the wave speed. Gravity pulls the surface flat; surface tension does too, at short wavelengths. So, where gravity and surface tension trade off against each other, water waves reach a minimum phase velocity — the crossover point between the long gravity waves we associate with the ocean and the short capillary waves that ripple across a puddle.
+For surface waves on water, two different mechanisms compete to set the wave speed. Gravity pulls the surface flat; surface tension does too, at short wavelengths. So, where gravity and surface tension trade off against each other, water waves reach a minimum phase velocity — the crossover point between the long gravity waves we associate with the ocean and the short capillary waves that ripple across a puddle [9].
 
 Even a free quantum particle has a dispersion relation. For a de Broglie wave, the frequency grows with the square of the wavenumber, producing an upward-curving parabola. Remarkably, the velocity we associate with the particle itself is the group velocity of its wave packet, not the phase velocity of the underlying oscillations.
 
@@ -101,7 +101,7 @@ For what comes next, we need a medium with one more property on top of dispersio
 
 ## Water Waves
 
-For surface gravity waves on water of depth h, ignoring surface tension for the moment, the dispersion relation is
+For surface gravity waves on water of depth h, ignoring surface tension for the moment, the dispersion relation is [9]
 
 $$
 \omega^2 = gk\tanh(kh)
@@ -157,7 +157,7 @@ Remember that *k₁*, *k₂* and *k₃* all correspond to the same frequency ω 
 
 The wave has not somehow acquired a negative amplitude. Nor is it running backwards in time. The sign just tells us how its phase evolves in a particular reference frame — for that one mode, the co-moving observer sees the phase turning the 'wrong' way compared to the bystander.
 
-Our waves are still entirely classical here — nothing quantum has entered the picture yet. But note that this distinction, between positive- and negative-frequency modes, will turn out to matter a great deal once we reach the analogue of Hawking radiation.
+Our waves are still entirely classical here — nothing quantum has entered the picture yet. But note that this distinction, between positive- and negative-frequency modes, will turn out to matter a great deal once we reach the analogue of Hawking radiation [5, 6].
 
 ## Where the Modes Meet
 
@@ -171,28 +171,30 @@ What happens then is worth spelling out, because it is not just a mathematical c
 
 > **A wave can still move through the water while standing perfectly still relative to the bank.**
 
-So, we have now encountered two ingredients that also feature in Hawking's analysis of black holes: negative frequencies, seen from the perspective of a co-moving observer, and a wave that stalls and simply cannot propagate any further. We have not done anything quantum or relativistic yet — this is all still classical water on a classical river. But it is hard not to wonder to what extent this point, where a wave trying to flow upstream stalls, is a true horizon.
+So, we have now encountered two ingredients that also feature in Hawking's analysis of black holes [4]: negative frequencies, seen from the perspective of a co-moving observer, and a wave that stalls and simply cannot propagate any further [2, 6]. We have not done anything quantum or relativistic yet — this is all still classical water on a classical river. But it is hard not to wonder to what extent this point, where a wave trying to flow upstream stalls, is a true horizon.
 
 That is where we will continue next time.
 
 ## References
 
-1. Brillouin, L. *Wave Propagation and Group Velocity*. Academic Press, 1960.
+1. Unruh, W. G. "Experimental Black-Hole Evaporation?" *Physical Review Letters* **46**, 1351–1353 (1981).
 
-2. Lighthill, M. J. *Waves in Fluids*. Cambridge University Press, 1978.
+2. Schützhold, R. & Unruh, W. G. "Gravity Wave Analogues of Black Holes." *Physical Review D* **66**, 044019 (2002).
 
-3. Ashcroft, N. W. & Mermin, N. D. *Solid State Physics*. Holt, Rinehart and Winston, 1976.
+3. Barceló, C., Liberati, S. & Visser, M. "Analogue Gravity." *Living Reviews in Relativity* **14**, 3 (2011).
 
 4. Hawking, S. W. "Particle Creation by Black Holes." *Communications in Mathematical Physics* **43**, 199–220 (1975).
 
-5. Unruh, W. G. "Experimental Black-Hole Evaporation?" *Physical Review Letters* **46**, 1351–1353 (1981).
+5. Rousseaux, G., Mathis, C., Maïssa, P., Philbin, T. G. & Leonhardt, U. "Observation of Negative-Frequency Waves in a Water Tank: A Classical Analogue to the Hawking Effect?" *New Journal of Physics* **10**, 053015 (2008).
 
-6. Schützhold, R. & Unruh, W. G. "Gravity Wave Analogues of Black Holes." *Physical Review D* **66**, 044019 (2002).
+6. Weinfurtner, S., Tedford, E. W., Penrice, M. C. J., Unruh, W. G. & Lawrence, G. A. "Measurement of Stimulated Hawking Emission in an Analogue System." *Physical Review Letters* **106**, 021302 (2011).
 
-7. Rousseaux, G., Mathis, C., Maïssa, P., Philbin, T. G. & Leonhardt, U. "Observation of Negative-Frequency Waves in a Water Tank: A Classical Analogue to the Hawking Effect?" *New Journal of Physics* **10**, 053015 (2008).
+7. Brillouin, L. *Wave Propagation and Group Velocity*. Academic Press, 1960.
 
-8. Weinfurtner, S., Tedford, E. W., Penrice, M. C. J., Unruh, W. G. & Lawrence, G. A. "Measurement of Stimulated Hawking Emission in an Analogue System." *Physical Review Letters* **106**, 021302 (2011).
+8. Ashcroft, N. W. & Mermin, N. D. *Solid State Physics*. Holt, Rinehart and Winston, 1976.
 
-9. Leonhardt, U. & Robertson, S. "Analytical Theory of Hawking Radiation in Dispersive Media." *New Journal of Physics* **14**, 053003 (2012).
+9. Lighthill, M. J. *Waves in Fluids*. Cambridge University Press, 1978.
 
-10. Barceló, C., Liberati, S. & Visser, M. "Analogue Gravity." *Living Reviews in Relativity* **14**, 3 (2011).
+### Further reading (not cited in the text)
+
+- Leonhardt, U. & Robertson, S. "Analytical Theory of Hawking Radiation in Dispersive Media." *New Journal of Physics* **14**, 053003 (2012).
